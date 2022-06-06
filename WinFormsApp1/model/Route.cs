@@ -8,8 +8,8 @@ namespace WinFormsApp1
 {
     public class Route
     {
-        private List<Stop> stops;
-        private int routeNumber;
+        public List<Stop> stops { get; private set; }
+        public int routeNumber { get; private set; }
         private List<Ticket> tickets;
         private int numberOfSeats;
         public Route (List<Stop> stops, int routeNumber, int numberOfSeats)
