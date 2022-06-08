@@ -10,7 +10,7 @@ namespace WinFormsApp1
     {
         public DateTime departure { get; private set; }
         public string stopName { get; private set; }
-        private float price;
+        public float price { get; private set; }
         public Stop(DateTime departure, string stopName, float price)
         {
             this.departure = departure;

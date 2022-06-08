@@ -12,9 +12,9 @@ namespace WinFormsApp1
         private float price;
         private int seatNumber;
         private Passanger passanger;
-        private string departure;
-        private string destination;
-        public Ticket(Route route, float price, int seatNumber, Passanger passanger, string departure, string destination)
+        private Stop departure;
+        private Stop destination;
+        public Ticket(Route route, float price, int seatNumber, Passanger passanger, Stop departure, Stop destination)
         {
             this.route = route;
             this.price = price;

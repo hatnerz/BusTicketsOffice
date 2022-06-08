@@ -3,15 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace WinFormsApp1
 {
     public static class AllRoutes
     {
         public static List<Route> routes = new List<Route>();
-        public static void Initialize(string fileName)
+        public static void Load(string fileName)
         {
-            // Загрузка из файла
+            StreamReader? sr = new StreamReader(fileName);
+            try
+            {
+                string? toLoad = sr.ReadLine();
+                if (toLoad != null)
+                    AllRoutes.routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
+                else
+                    MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+            }
+            catch
+            {
+                MessageBox.Show("Сталася ggпомилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                sr.Close();
+            }
+        }
+        public static void Save(string fileName)
+        {
+            string toSave = JsonSerializer.Serialize(AllRoutes.routes);
+            StreamWriter sw = new StreamWriter(fileName, false);
+            sw.WriteLine(toSave);
+            sw.Close();
         }
         public static List<Route> FindRouteByCities(string departure, string destination, DateTime date)
         {
