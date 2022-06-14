@@ -13,6 +13,17 @@ namespace WinFormsApp1
         private List<Ticket> tickets;
         public int numberOfSeats { get; private set; }
         private bool[,] occupiedSeats;
+        public string stringInfo
+        {
+            get {
+                string rez = Convert.ToString(routeNumber);
+                rez += " ";
+                rez += stops[0].stopName;
+                rez += " - ";
+                rez += stops.Last().stopName;
+                return rez;
+            }
+        }
         public Route (List<Stop> stops, int routeNumber, int numberOfSeats)
         {
             this.stops = stops;
@@ -41,7 +52,8 @@ namespace WinFormsApp1
             return -1;
         }
 
-        public Ticket addTicket(string departure, string destination, Passanger passanger, int seatNumber)
+        public void addTicket(string departure, string destination, Passanger passanger, int seatNumber,
+            string firstName, string lastName, string patronymicName)
         {
             int startIndex = findStopIndexByName(departure);
             int endIndex = findStopIndexByName(destination);
@@ -52,13 +64,14 @@ namespace WinFormsApp1
             }
             Stop departureStop = findStopByStopName(departure);
             Stop destinationStop = findStopByStopName(destination);
-            Ticket temp = new Ticket(this, price, seatNumber, passanger, departureStop, destinationStop);
+            Ticket temp = new Ticket(this, price, seatNumber, passanger, departureStop, destinationStop,
+                firstName, lastName, patronymicName);
             tickets.Add(temp);
-            for(int i = startIndex; i < endIndex; i++)
+            passanger.tickets.Add(temp);
+            for (int i = startIndex; i < endIndex; i++)
             {
                 occupiedSeats[seatNumber, i] = true;
             }
-            return temp;
         }
 
         public List<int> getFreeSeats(int startIndex, int endIndex)
@@ -78,10 +91,24 @@ namespace WinFormsApp1
                 }
                 if(correct)
                 {
-                    freeSeats.Add(i);
+                    freeSeats.Add(i+1);
                 }
             }
             return freeSeats;
+        }
+        public float getPrice(int departureIndex, int destinationIndex)
+        {
+            float sumPrice = 0;
+            try
+            {
+                for (int i = departureIndex + 1; i <= destinationIndex; i++)
+                    sumPrice += stops[i].price;
+            }
+            catch
+            {
+                return -1;
+            }
+            return sumPrice;
         }
     }
 }

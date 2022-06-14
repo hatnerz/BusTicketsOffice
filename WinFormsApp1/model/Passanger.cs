@@ -8,14 +8,10 @@ namespace WinFormsApp1
 {
     public class Passanger
     {
-        private string firstName;
-        private string lastName;
-        private int phoneNumber;
-        private List<Ticket> tickets;
-        public Passanger(string firstName, string lastName, int phoneNumber)
+        public string phoneNumber { get; private set; }
+        public List<Ticket> tickets;
+        public Passanger(string phoneNumber)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             tickets = new List<Ticket>();
         }

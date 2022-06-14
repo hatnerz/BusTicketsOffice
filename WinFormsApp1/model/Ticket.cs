@@ -14,8 +14,16 @@ namespace WinFormsApp1
         private Passanger passanger;
         private Stop departure;
         private Stop destination;
-        public Ticket(Route route, float price, int seatNumber, Passanger passanger, Stop departure, Stop destination)
+        private string firstName;
+        private string lastName;
+        private string patronymicName;
+           
+        public Ticket(Route route, float price, int seatNumber, Passanger passanger, 
+            Stop departure, Stop destination, string firstName, string lastName, string patronymicName)
         {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.patronymicName = patronymicName;
             this.route = route;
             this.price = price;
             this.seatNumber = seatNumber;

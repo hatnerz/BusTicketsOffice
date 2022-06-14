@@ -55,12 +55,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.routeChoseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnTicketMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource)).BeginInit();
             this.panelRoutes.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PageCaption
@@ -319,18 +325,59 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Рейс № 101";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.routeChoseMenuItem,
+            this.returnTicketMenuItem,
+            this.routeEditMenuItem,
+            this.helpToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // routeChoseMenuItem
+            // 
+            this.routeChoseMenuItem.Name = "routeChoseMenuItem";
+            this.routeChoseMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.routeChoseMenuItem.Text = "Оформлення квитків";
+            // 
+            // returnTicketMenuItem
+            // 
+            this.returnTicketMenuItem.Name = "returnTicketMenuItem";
+            this.returnTicketMenuItem.Size = new System.Drawing.Size(138, 20);
+            this.returnTicketMenuItem.Text = "Повернення квитків";
+            // 
+            // routeEditMenuItem
+            // 
+            this.routeEditMenuItem.Name = "routeEditMenuItem";
+            this.routeEditMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.routeEditMenuItem.Text = "Редагування рейсів";
+            this.routeEditMenuItem.Click += new System.EventHandler(this.routeEditMenuItem_Click);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
             // RouteChose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1176, 747);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelRoutes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "RouteChose";
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.RouteChose_Activated);
+            this.Load += new System.EventHandler(this.RouteChose_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).EndInit();
@@ -340,6 +387,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +422,10 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem routeChoseMenuItem;
+        private ToolStripMenuItem returnTicketMenuItem;
+        private ToolStripMenuItem routeEditMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem1;
     }
 }

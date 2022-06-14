@@ -23,7 +23,7 @@ namespace WinFormsApp1
             }
             catch
             {
-                MessageBox.Show("Сталася ggпомилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
             }
             finally
             {
@@ -59,6 +59,16 @@ namespace WinFormsApp1
                 }
             }
             return foundRoutes;
+        }
+        public static List<Route> FindRoutesByDate(DateTime date)
+        {
+            List<Route> correctRoutes = new List<Route>();
+            foreach (Route route in routes)
+            {
+                if (route.stops[0].departure.Date == date.Date)
+                    correctRoutes.Add(route);
+            }
+            return correctRoutes;
         }
     }
 }

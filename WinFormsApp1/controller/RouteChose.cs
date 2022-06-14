@@ -9,33 +9,14 @@ namespace WinFormsApp1
             InitializeComponent();
             AllRoutes.Load("routes.json");
             ListOfCities.Load("cities.json");
-
-            /* ListOfCities.AddCity("Kyiv");
-            ListOfCities.AddCity("Kharkiv");
-            ListOfCities.AddCity("Dnipro");
-            ListOfCities.AddCity("Lviv");
-            Stop first = new Stop(new DateTime(2022, 06, 10, 13, 40, 00), ListOfCities.cities[0], 0f);
-            Stop second = new Stop(new DateTime(2022, 06, 10, 14, 20, 00), ListOfCities.cities[2], 32.6f);
-            Stop third = new Stop(new DateTime(2022, 06, 10, 16, 10, 00), ListOfCities.cities[1], 52.8f);
-            Stop fourth = new Stop(new DateTime(2022, 06, 10, 18, 10, 00), ListOfCities.cities[3], 48.3f);
-            List<Stop> all_stops_route1 = new List<Stop>();
-            all_stops_route1.Add(first);
-            all_stops_route1.Add(second);
-            all_stops_route1.Add(third);
-            all_stops_route1.Add(fourth);
-            Route temp = new Route(all_stops_route1, 410, 45);
-            AllRoutes.routes.Add(temp); */
-
             departureBox.Items.AddRange(ListOfCities.cities.ToArray());
             destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
             dateDepartureBox.MinDate = DateTime.Now;
             DateTime Max = DateTime.Now;
             dateDepartureBox.MaxDate = Max.AddMonths(1);
-            AllRoutes.Save("routes.json");
-            ListOfCities.Save("cities.json");
         }
 
-        private void findRoutesButton_Click(object sender, EventArgs e)
+        private void updateRoutes()
         {
             panelRoutes.Controls.Clear();
             Label infoText = new Label();
@@ -53,14 +34,14 @@ namespace WinFormsApp1
             else
             {
                 List<Route> correctRoutes = AllRoutes.FindRouteByCities(departureBox.Text, destinationBox.Text, dateDepartureBox.Value);
-                if(correctRoutes.Count == 0)
+                if (correctRoutes.Count == 0)
                 {
                     infoText.Text = "Рейсів за вказаним напрямком на вказану дату не знайдено.";
                     panelRoutes.Controls.Add(infoText);
                 }
                 else
                 {
-                    for(int i = 0; i< correctRoutes.Count; i++)
+                    for (int i = 0; i < correctRoutes.Count; i++)
                     {
                         Label routeNumLabel = new Label();
                         routeNumLabel.Text = "Рейс № " + correctRoutes[i].routeNumber;
@@ -95,9 +76,8 @@ namespace WinFormsApp1
                         RouteChoseEventArgs ev = new RouteChoseEventArgs(correctRoutes[i], departureStop, destinationStop);
 
                         Route tempRoute = correctRoutes[i];
-                        void goTicketingButton_Click (object? sender, EventArgs e)
+                        void goTicketingButton_Click(object? sender, EventArgs e)
                         {
-                            MessageBox.Show(Convert.ToString(i), Convert.ToString(i), MessageBoxButtons.OK);
                             startTicketing(tempRoute, departureStop, destinationStop);
                         }
 
@@ -110,7 +90,7 @@ namespace WinFormsApp1
 
                         Panel availableRoutePanel = new Panel();
                         availableRoutePanel.Size = new Size(1020, 78);
-                        availableRoutePanel.Location = new Point(12, i*85+12);
+                        availableRoutePanel.Location = new Point(12, i * 85 + 12);
                         availableRoutePanel.BorderStyle = BorderStyle.FixedSingle;
                         availableRoutePanel.Controls.Add(routeNumLabel);
                         availableRoutePanel.Controls.Add(destinationLabel);
@@ -122,13 +102,33 @@ namespace WinFormsApp1
                     }
                 }
             }
-            
+        }
+        private void findRoutesButton_Click(object sender, EventArgs e)
+        {
+            updateRoutes();   
         }
 
         private void startTicketing(Route route, Stop departure, Stop destination)
         {
-            Ticketing f = new Ticketing();
+            Ticketing f = new Ticketing(route, departure, destination);
             f.Show();
+        }
+
+        private void RouteChose_Activated(object sender, EventArgs e)
+        {
+            updateRoutes();
+        }
+
+        private void routeEditMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.Context.MainForm = new RouteEditing();
+            this.Close();
+            Program.Context.MainForm.Show();
+        }
+
+        private void RouteChose_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
