@@ -9,6 +9,7 @@ namespace WinFormsApp1
             InitializeComponent();
             AllRoutes.Load("routes.json");
             ListOfCities.Load("cities.json");
+            AllPassangers.Load("passangers.json");
             departureBox.Items.AddRange(ListOfCities.cities.ToArray());
             destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
             dateDepartureBox.MinDate = DateTime.Now;

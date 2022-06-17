@@ -44,8 +44,9 @@ namespace WinFormsApp1
                 string lastName = lastNameTextBox.Text;
                 string patronymicName = patronymicNameTextBox.Text;
                 int seat = Convert.ToInt32(seatCombo.Text)-1;
-                AllPassangers.addTicketToPassangerByNumber(phone, route, departure, destination, seat, firstName, lastName, patronymicName);
+                AllPassangers.addTicketToPassangerByNumber(phone, route, departure.stopName, destination.stopName, seat, firstName, lastName, patronymicName);
                 MessageBox.Show("Квиток успішно придбано", "Успіх", MessageBoxButtons.OK);
+                AllPassangers.Save("passangers.json");
                 this.Close();
             }
         }

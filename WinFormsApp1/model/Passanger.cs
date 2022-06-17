@@ -9,11 +9,9 @@ namespace WinFormsApp1
     public class Passanger
     {
         public string phoneNumber { get; private set; }
-        public List<Ticket> tickets;
         public Passanger(string phoneNumber)
         {
             this.phoneNumber = phoneNumber;
-            tickets = new List<Ticket>();
         }
     }
 }

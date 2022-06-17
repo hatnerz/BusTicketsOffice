@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace WinFormsApp1
 {
@@ -10,9 +11,10 @@ namespace WinFormsApp1
     {
         public List<Stop> stops { get; private set; }
         public int routeNumber { get; private set; }
-        private List<Ticket> tickets;
+        //[JsonInclude]
+        public List<Ticket> tickets { get; set; }
         public int numberOfSeats { get; private set; }
-        private bool[,] occupiedSeats;
+        private bool[,] occupiedSeats { get; set; }
         public string stringInfo
         {
             get {
@@ -24,13 +26,40 @@ namespace WinFormsApp1
                 return rez;
             }
         }
+        public bool[] occupiedSeatsSerialize
+        {
+            get
+            {
+                bool[] temp = new bool[occupiedSeats.Length];
+                int index = 0;
+                for(int i = 0; i<numberOfSeats; i++)
+                {
+                    for(int j = 0; j<stops.Count; j++)
+                    {
+                        temp[index++] = occupiedSeats[i, j];
+                    }
+                }
+                return temp;
+            }
+            set
+            {
+                int index = 0;
+                for (int i = 0; i < numberOfSeats; i++)
+                {
+                    for (int j = 0; j < stops.Count; j++)
+                    {
+                        occupiedSeats[i, j] = value[index++];
+                    }
+                }
+            }
+        }
         public Route (List<Stop> stops, int routeNumber, int numberOfSeats)
         {
             this.stops = stops;
             this.routeNumber = routeNumber;
             this.numberOfSeats = numberOfSeats;
             tickets = new List<Ticket>();
-            occupiedSeats = new bool[numberOfSeats, stops.Count];
+            occupiedSeats = new bool[numberOfSeats,stops.Count];
         }
         public Stop findStopByStopName(string stopName)
         {
@@ -51,8 +80,7 @@ namespace WinFormsApp1
             }
             return -1;
         }
-
-        public void addTicket(string departure, string destination, Passanger passanger, int seatNumber,
+        public void addTicket(string departure, string destination, string phoneNumber, int seatNumber,
             string firstName, string lastName, string patronymicName)
         {
             int startIndex = findStopIndexByName(departure);
@@ -62,12 +90,9 @@ namespace WinFormsApp1
             {
                 price += stops[i].price;
             }
-            Stop departureStop = findStopByStopName(departure);
-            Stop destinationStop = findStopByStopName(destination);
-            Ticket temp = new Ticket(this, price, seatNumber, passanger, departureStop, destinationStop,
+            Ticket temp = new Ticket(price, seatNumber, phoneNumber, departure, destination,
                 firstName, lastName, patronymicName);
             tickets.Add(temp);
-            passanger.tickets.Add(temp);
             for (int i = startIndex; i < endIndex; i++)
             {
                 occupiedSeats[seatNumber, i] = true;

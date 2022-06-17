@@ -12,22 +12,20 @@ namespace WinFormsApp1
         public static List<Passanger> passangers = new List<Passanger>();
         public static void Load(string fileName)
         {
-            StreamReader? sr = new StreamReader(fileName);
+            StreamReader? sr;
             try
             {
+                sr = new StreamReader(fileName);
                 string? toLoad = sr.ReadLine();
                 if (toLoad != null)
                     AllPassangers.passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
                 else
                     MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+                sr.Close();
             }
             catch
             {
                 MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
-            }
-            finally
-            {
-                sr.Close();
             }
         }
         public static void Save(string fileName)
@@ -46,7 +44,7 @@ namespace WinFormsApp1
             }
             return null;
         }
-        public static void addTicketToPassangerByNumber(string number, Route route, Stop departure, Stop destination, 
+        public static void addTicketToPassangerByNumber(string number, Route route, string departure, string destination, 
             int seatNumber, string firstName, string lastName, string patronymicName)
         {
             Passanger? p = getPassangerByPhoneNumber(number);
@@ -55,7 +53,7 @@ namespace WinFormsApp1
                 passangers.Add(new Passanger(number));
                 p = passangers.Last();
             }
-            route.addTicket(departure.stopName, destination.stopName, p, seatNumber, firstName, lastName, patronymicName);
+            route.addTicket(departure, destination, number, seatNumber, firstName, lastName, patronymicName);
         }
     }
 }
