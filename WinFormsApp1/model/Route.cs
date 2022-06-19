@@ -90,13 +90,21 @@ namespace WinFormsApp1
             {
                 price += stops[i].price;
             }
-            Ticket temp = new Ticket(price, seatNumber, phoneNumber, departure, destination,
+            Ticket temp = new Ticket(this.stringInfo, price, seatNumber, phoneNumber, departure, destination,
                 firstName, lastName, patronymicName);
             tickets.Add(temp);
             for (int i = startIndex; i < endIndex; i++)
             {
-                occupiedSeats[seatNumber, i] = true;
+                occupiedSeats[seatNumber-1, i] = true;
             }
+        }
+        public void deleteTicket(Ticket t)
+        {
+            int departureIndex = findStopIndexByName(t.departure);
+            int destinationIndex = findStopIndexByName(t.destination);
+            for (int i = departureIndex; i < destinationIndex; i++)
+                occupiedSeats[t.seatNumber-1, i] = false;
+            tickets.Remove(t);
         }
 
         public List<int> getFreeSeats(int startIndex, int endIndex)

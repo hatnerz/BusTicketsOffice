@@ -47,31 +47,69 @@ namespace WinFormsApp1
 
         private void addRouteButton_Click(object sender, EventArgs e)
         {
-            int routeNumber = (int)routeNumberAdd.Value;
-            int seatNumber = (int)seatNumberAdd.Value;
-            string strStopsInfo = stopsInfoAdd.Text;
-            string[] stopsInfo = strStopsInfo.Split('\n');
-            List<Stop> temp = new List<Stop>(stopsInfo.Length);
-            for (int i = 0; i<stopsInfo.Length; i++)
+            try
             {
-                string[] stopInfo = stopsInfo[i].Split(' ');
-                string stopName = stopInfo[0];
-                ListOfCities.AddCity(stopName);
-                DateTime departure = Convert.ToDateTime(stopInfo[1] + " " + stopInfo[2]);
-                float price = float.Parse(stopInfo[3]);
-                temp.Add(new Stop(departure, stopName, price));
+                int routeNumber = (int)routeNumberAdd.Value;
+                int seatNumber = (int)seatNumberAdd.Value;
+                string strStopsInfo = stopsInfoAdd.Text;
+                string[] stopsInfo = strStopsInfo.Split('\n');
+                if (stopsInfo.Length == 1)
+                    throw new Exception();
+                List<Stop> temp = new List<Stop>(stopsInfo.Length);
+                for (int i = 0; i < stopsInfo.Length; i++)
+                {
+                    string[] stopInfo = stopsInfo[i].Split(' ');
+                    string stopName = stopInfo[0];
+                    ListOfCities.AddCity(stopName);
+                    DateTime departure = Convert.ToDateTime(stopInfo[1] + " " + stopInfo[2]);
+                    float price = float.Parse(stopInfo[3]);
+                    temp.Add(new Stop(departure, stopName, price));
+                }
+                AllRoutes.routes.Add(new Route(temp, routeNumber, seatNumber));
+                updateRouteChose();
+                MessageBox.Show("Маршрут успішно додано.", "Успіх", MessageBoxButtons.OK);
+                AllRoutes.Save("routes.json");
+                ListOfCities.Save("cities.json");
             }
-            AllRoutes.routes.Add(new Route(temp, routeNumber, seatNumber));
-            updateRouteChose();
+            catch
+            {
+                MessageBox.Show("Перевірте правильність введення даних", "Помилки", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void routeChoseMenuItem_Click(object sender, EventArgs e)
         {
-            AllRoutes.Save("routes.json");
-            ListOfCities.Save("cities.json");
             Program.Context.MainForm = new RouteChose();
             this.Close();
             Program.Context.MainForm.Show();
+        }
+
+        private void returnTicketMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.Context.MainForm = new TicketsReturn();
+            this.Close();
+            Program.Context.MainForm.Show();
+        }
+
+        private void deleteUnused_Click(object sender, EventArgs e)
+        {
+            ListOfCities.DeleteUnused();
+            ListOfCities.Save("cities.json");
+        }
+
+        private void addCity_Click(object sender, EventArgs e)
+        {
+            if (cityName.Text.Length == 0)
+                MessageBox.Show("Введіть назву зупинки", "Помилки", MessageBoxButtons.OK);
+            else
+            {
+                if(ListOfCities.AddCity(cityName.Text) == true)
+                    MessageBox.Show("Назву зупинки успішно додано", "Успіх", MessageBoxButtons.OK);
+                else
+                    MessageBox.Show("Зупинка з такою назвою вже є у списку", "Помилки", MessageBoxButtons.OK);
+            }
+            ListOfCities.Save("cities.json");
         }
     }
 }

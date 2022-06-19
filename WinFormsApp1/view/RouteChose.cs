@@ -10,6 +10,8 @@ namespace WinFormsApp1
             AllRoutes.Load("routes.json");
             ListOfCities.Load("cities.json");
             AllPassangers.Load("passangers.json");
+            AllRoutes.deleteOutdatesRoutes();
+            AllRoutes.Save("routes.json");
             departureBox.Items.AddRange(ListOfCities.cities.ToArray());
             destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
             dateDepartureBox.MinDate = DateTime.Now;
@@ -65,7 +67,8 @@ namespace WinFormsApp1
                         Label emptySeatsLabel = new Label();
                         int startIndex = correctRoutes[i].findStopIndexByName(departureBox.Text);
                         int endIndex = correctRoutes[i].findStopIndexByName(destinationBox.Text);
-                        emptySeatsLabel.Text = "Кількість вільних місць: " + correctRoutes[i].getFreeSeats(startIndex, endIndex).Count;
+                        int freeSeats = correctRoutes[i].getFreeSeats(startIndex, endIndex).Count;
+                        emptySeatsLabel.Text = "Кількість вільних місць: " + Convert.ToString(freeSeats);
                         emptySeatsLabel.Location = new Point(27, 45);
                         emptySeatsLabel.AutoSize = true;
 
@@ -73,9 +76,6 @@ namespace WinFormsApp1
                         goTicketingButton.Text = "Перейти до оформлення квитку";
                         goTicketingButton.Location = new Point(783, 45);
                         goTicketingButton.Size = new Size(206, 23);
-
-                        RouteChoseEventArgs ev = new RouteChoseEventArgs(correctRoutes[i], departureStop, destinationStop);
-
                         Route tempRoute = correctRoutes[i];
                         void goTicketingButton_Click(object? sender, EventArgs e)
                         {
@@ -84,10 +84,18 @@ namespace WinFormsApp1
 
                         goTicketingButton.Click += goTicketingButton_Click;
 
+
                         Button detailInformationButton = new Button();
                         detailInformationButton.Text = "Детальна інформація про рейс";
                         detailInformationButton.Location = new Point(783, 15);
                         detailInformationButton.Size = new Size(206, 23);
+                        void goDetailInformation(object? sender, EventArgs e)
+                        {
+                            startDetailInformation(tempRoute, departureStop, destinationStop, freeSeats);
+                        }
+                        detailInformationButton.Click += goDetailInformation;
+
+
 
                         Panel availableRoutePanel = new Panel();
                         availableRoutePanel.Size = new Size(1020, 78);
@@ -115,6 +123,12 @@ namespace WinFormsApp1
             f.Show();
         }
 
+        private void startDetailInformation(Route route, Stop departure, Stop destination, int freeSeats)
+        {
+            DetailInformation f = new DetailInformation(route, departure, destination, freeSeats);
+            f.Show();
+        }
+
         private void RouteChose_Activated(object sender, EventArgs e)
         {
             updateRoutes();
@@ -130,6 +144,13 @@ namespace WinFormsApp1
         private void RouteChose_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void returnTicketMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.Context.MainForm = new TicketsReturn();
+            this.Close();
+            Program.Context.MainForm.Show();
         }
     }
 }

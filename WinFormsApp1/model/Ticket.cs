@@ -9,6 +9,7 @@ namespace WinFormsApp1
 {
     public class Ticket
     {
+        public string routeInfo { get; private set; }
         public float price { get; private set; }
         public int seatNumber { get; private set; }
         public string passangerPhoneNumber { get; private set; }
@@ -18,9 +19,10 @@ namespace WinFormsApp1
         public string lastName { get; private set; }
         public string patronymicName { get; private set; }
 
-        public Ticket(float price, int seatNumber, string passangerPhoneNumber, 
+        public Ticket(string routeInfo, float price, int seatNumber, string passangerPhoneNumber, 
             string departure, string destination, string firstName, string lastName, string patronymicName)
         {
+            this.routeInfo = routeInfo;
             this.firstName = firstName;
             this.lastName = lastName;
             this.patronymicName = patronymicName;

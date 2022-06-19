@@ -27,7 +27,7 @@ namespace WinFormsApp1
             int depIndex = route.stops.IndexOf(departure);
             int destIndex = route.stops.IndexOf(destination);
             float curcentPrice = route.getPrice(depIndex, destIndex);
-            priceLabel.Text = "Вартість квитку: " + curcentPrice;
+            priceLabel.Text = "Вартість квитку: " + String.Format("{0:f2}", curcentPrice);
             int[] temp = route.getFreeSeats(depIndex, destIndex).ToArray();
             seatCombo.DataSource = temp;
         }
@@ -43,10 +43,11 @@ namespace WinFormsApp1
                 string firstName = firstNameTextBox.Text;
                 string lastName = lastNameTextBox.Text;
                 string patronymicName = patronymicNameTextBox.Text;
-                int seat = Convert.ToInt32(seatCombo.Text)-1;
+                int seat = Convert.ToInt32(seatCombo.Text);
                 AllPassangers.addTicketToPassangerByNumber(phone, route, departure.stopName, destination.stopName, seat, firstName, lastName, patronymicName);
                 MessageBox.Show("Квиток успішно придбано", "Успіх", MessageBoxButtons.OK);
                 AllPassangers.Save("passangers.json");
+                AllRoutes.Save("routes.json");
                 this.Close();
             }
         }

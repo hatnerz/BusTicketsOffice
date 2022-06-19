@@ -12,22 +12,20 @@ namespace WinFormsApp1
         public static List<Route> routes = new List<Route>();
         public static void Load(string fileName)
         {
-            StreamReader? sr = new StreamReader(fileName);
+            StreamReader? sr;
             try
             {
+                sr = new StreamReader(fileName);
                 string? toLoad = sr.ReadLine();
                 if (toLoad != null)
                     AllRoutes.routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
                 else
                     MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+                sr.Close();
             }
             catch
             {
                 MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
-            }
-            finally
-            {
-                sr.Close();
             }
         }
         public static void Save(string fileName)
@@ -69,6 +67,49 @@ namespace WinFormsApp1
                     correctRoutes.Add(route);
             }
             return correctRoutes;
+        }
+        public static List<Ticket> FindPassangerTicketsByNumber(string phoneNumber)
+        {
+            List<Ticket> correctTickets = new List<Ticket>();
+            foreach(Route route in routes)
+            {
+                foreach(Ticket ticket in route.tickets)
+                {
+                    if(ticket.passangerPhoneNumber == phoneNumber)
+                    {
+                        correctTickets.Add(ticket);
+                    }
+                }
+            }
+            return (correctTickets);
+        }
+        public static bool deleteTicket(Ticket t)
+        {
+            foreach(Route route in routes)
+            {
+                foreach(Ticket ticket in route.tickets)
+                {
+                    if(ticket == t)
+                    {
+                        route.deleteTicket(t);
+                        return true;
+                    }
+                        
+                }
+            }
+            return false;
+        }
+        public static void deleteOutdatesRoutes()
+        {
+            DateTime now = DateTime.Now;
+            for (int i = 0; i < routes.Count; i++)
+            {
+                if (routes[i].stops[0].departure < now)
+                {
+                    routes.RemoveAt(i);
+                    i--;
+                }
+            }
         }
     }
 }
