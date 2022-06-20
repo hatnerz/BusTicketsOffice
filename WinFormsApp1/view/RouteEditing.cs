@@ -20,6 +20,7 @@ namespace WinFormsApp1
             dateRoutePicker.MaxDate = Max.AddMonths(1);
             routeChose.DisplayMember = "stringInfo";
             DateTime selectedDate = dateRoutePicker.Value;
+            routeChose.Items.Clear();
             routeChose.Items.AddRange(AllRoutes.FindRoutesByDate(selectedDate).ToArray());
         }
 
@@ -96,6 +97,7 @@ namespace WinFormsApp1
         {
             ListOfCities.DeleteUnused();
             ListOfCities.Save("cities.json");
+            MessageBox.Show("Операція успішна", "Успіх", MessageBoxButtons.OK);
         }
 
         private void addCity_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailInformation));
             this.PageCaption = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.routeInfo = new System.Windows.Forms.TextBox();
@@ -167,8 +168,9 @@
             this.ClientSize = new System.Drawing.Size(638, 372);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailInformation";
-            this.Text = "Form1";
+            this.Text = "BusTicketsOffice";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

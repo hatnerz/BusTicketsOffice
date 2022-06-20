@@ -29,17 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketsReturn));
             this.PageCaption = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.showTickets = new System.Windows.Forms.Button();
             this.phoneMaskTextBox = new System.Windows.Forms.MaskedTextBox();
             this.phoneNumber = new System.Windows.Forms.Label();
             this.passangerTicketsGrid = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.routeChoseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnTicketMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.routeInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seatNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureStop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +45,11 @@
             this.passangerLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passangerPatronymicName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.routeChoseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnTicketMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passangerTicketsGrid)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -139,45 +140,6 @@
             this.passangerTicketsGrid.TabIndex = 5;
             this.passangerTicketsGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.passangerTicketsGrid_RowHeaderMouseClick);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.routeChoseMenuItem,
-            this.returnTicketMenuItem,
-            this.routeEditMenuItem,
-            this.helpToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // routeChoseMenuItem
-            // 
-            this.routeChoseMenuItem.Name = "routeChoseMenuItem";
-            this.routeChoseMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.routeChoseMenuItem.Text = "Оформлення квитків";
-            this.routeChoseMenuItem.Click += new System.EventHandler(this.routeChoseMenuItem_Click);
-            // 
-            // returnTicketMenuItem
-            // 
-            this.returnTicketMenuItem.Name = "returnTicketMenuItem";
-            this.returnTicketMenuItem.Size = new System.Drawing.Size(138, 20);
-            this.returnTicketMenuItem.Text = "Повернення квитків";
-            // 
-            // routeEditMenuItem
-            // 
-            this.routeEditMenuItem.Name = "routeEditMenuItem";
-            this.routeEditMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.routeEditMenuItem.Text = "Редагування рейсів";
-            this.routeEditMenuItem.Click += new System.EventHandler(this.routeEditMenuItem_Click);
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
             // routeInfo
             // 
             this.routeInfo.DataPropertyName = "routeInfo";
@@ -236,6 +198,45 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.routeChoseMenuItem,
+            this.returnTicketMenuItem,
+            this.routeEditMenuItem,
+            this.helpToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // routeChoseMenuItem
+            // 
+            this.routeChoseMenuItem.Name = "routeChoseMenuItem";
+            this.routeChoseMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.routeChoseMenuItem.Text = "Оформлення квитків";
+            this.routeChoseMenuItem.Click += new System.EventHandler(this.routeChoseMenuItem_Click);
+            // 
+            // returnTicketMenuItem
+            // 
+            this.returnTicketMenuItem.Name = "returnTicketMenuItem";
+            this.returnTicketMenuItem.Size = new System.Drawing.Size(138, 20);
+            this.returnTicketMenuItem.Text = "Повернення квитків";
+            // 
+            // routeEditMenuItem
+            // 
+            this.routeEditMenuItem.Name = "routeEditMenuItem";
+            this.routeEditMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.routeEditMenuItem.Text = "Редагування рейсів";
+            this.routeEditMenuItem.Click += new System.EventHandler(this.routeEditMenuItem_Click);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
             // TicketsReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -247,9 +248,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "TicketsReturn";
-            this.Text = "Form1";
+            this.Text = "BusTicketsOffice";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passangerTicketsGrid)).EndInit();

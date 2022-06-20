@@ -25,6 +25,10 @@ namespace WinFormsApp1
             else
             {
                 passangerTickets = AllRoutes.FindPassangerTicketsByNumber(phoneMaskTextBox.Text);
+                if(passangerTickets.Count == 0)
+                {
+                    MessageBox.Show("Не знайдено жодного квитку за вказаним номером телефону", "Помилка", MessageBoxButtons.OK);
+                }
                 passangerTicketsGrid.DataSource = passangerTickets.GetRange(0, passangerTickets.Count);
             }
         }

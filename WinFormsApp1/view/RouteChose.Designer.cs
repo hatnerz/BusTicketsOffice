@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteChose));
             this.PageCaption = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateDepartureBox = new System.Windows.Forms.DateTimePicker();
@@ -103,7 +104,7 @@
             // 
             // dateDepartureBox
             // 
-            this.dateDepartureBox.Location = new System.Drawing.Point(490, 59);
+            this.dateDepartureBox.Location = new System.Drawing.Point(514, 59);
             this.dateDepartureBox.Name = "dateDepartureBox";
             this.dateDepartureBox.Size = new System.Drawing.Size(144, 23);
             this.dateDepartureBox.TabIndex = 6;
@@ -125,7 +126,7 @@
             this.destinationBox.CausesValidation = false;
             this.destinationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.destinationBox.FormattingEnabled = true;
-            this.destinationBox.Location = new System.Drawing.Point(814, 59);
+            this.destinationBox.Location = new System.Drawing.Point(810, 59);
             this.destinationBox.Name = "destinationBox";
             this.destinationBox.Size = new System.Drawing.Size(155, 23);
             this.destinationBox.TabIndex = 3;
@@ -376,6 +377,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RouteChose";
             this.Text = "BusTicketsOffice";
             this.Activated += new System.EventHandler(this.RouteChose_Activated);
