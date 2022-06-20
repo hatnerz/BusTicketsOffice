@@ -20,12 +20,12 @@ namespace WinFormsApp1
                 if (toLoad != null)
                     AllRoutes.routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
                 else
-                    MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+                    MessageBox.Show("Сталася помилка при завантаженні файлу (інформація про рейси). Файл не знайдено або некоректні дані", "Помилка", MessageBoxButtons.OK);
                 sr.Close();
             }
             catch
             {
-                MessageBox.Show("Сталася помилка при завантаженні файлу", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show("Сталася помилка при завантаженні файлу (інформація про рейси). Файл не знайдено або некоректні дані", "Помилка", MessageBoxButtons.OK);
             }
         }
         public static void Save(string fileName)
