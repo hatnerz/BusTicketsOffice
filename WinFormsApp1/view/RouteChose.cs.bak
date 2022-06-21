@@ -26,12 +26,12 @@ namespace WinFormsApp1
             infoText.AutoSize = true;
             if (departureBox.Text == "" || destinationBox.Text == "")
             {
-                infoText.Text = "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРёР±РµСЂС–С‚СЊ РїСѓРЅРєС‚ РІС–РґРїСЂР°РІР»РµРЅРЅСЏ С‚Р° РїСѓРЅРєС‚ РїСЂРёР·РЅР°С‡РµРЅРЅСЏ.";
+                infoText.Text = "Будь ласка, виберіть пункт відправлення та пункт призначення.";
                 panelRoutes.Controls.Add(infoText);
             }
             else if (departureBox.Text == destinationBox.Text)
             {
-                infoText.Text = "РЎС‚Р°РЅС†С–СЏ РІС–РґРїСЂР°РІР»РµРЅРЅСЏ Р·Р±С–РіР°С”С‚СЊСЃСЏ Р·С– СЃС‚Р°РЅС†С–С”СЋ РїСЂРёР±СѓС‚С‚СЏ. Р—РјС–РЅС–С‚СЊ СѓРјРѕРІРё РїРѕС€СѓРєСѓ.";
+                infoText.Text = "Станція відправлення збігається зі станцією прибуття. Змініть умови пошуку.";
                 panelRoutes.Controls.Add(infoText);
             }
             else
@@ -39,7 +39,7 @@ namespace WinFormsApp1
                 List<Route> correctRoutes = AllRoutes.FindRouteByCities(departureBox.Text, destinationBox.Text, dateDepartureBox.Value);
                 if (correctRoutes.Count == 0)
                 {
-                    infoText.Text = "Р РµР№СЃС–РІ Р·Р° РІРєР°Р·Р°РЅРёРј РЅР°РїСЂСЏРјРєРѕРј РЅР° РІРєР°Р·Р°РЅСѓ РґР°С‚Сѓ РЅРµ Р·РЅР°Р№РґРµРЅРѕ.";
+                    infoText.Text = "Рейсів за вказаним напрямком на вказану дату не знайдено.";
                     panelRoutes.Controls.Add(infoText);
                 }
                 else
@@ -47,7 +47,7 @@ namespace WinFormsApp1
                     for (int i = 0; i < correctRoutes.Count; i++)
                     {
                         Label routeNumLabel = new Label();
-                        routeNumLabel.Text = "Р РµР№СЃ в„– " + correctRoutes[i].routeNumber;
+                        routeNumLabel.Text = "Рейс № " + correctRoutes[i].routeNumber;
                         routeNumLabel.Location = new Point(27, 15);
                         routeNumLabel.AutoSize = true;
 
@@ -55,12 +55,12 @@ namespace WinFormsApp1
                         Stop destinationStop = correctRoutes[i].findStopByStopName(destinationBox.Text);
 
                         Label destinationLabel = new Label();
-                        destinationLabel.Text = "РџСЂРёР±СѓС‚С‚СЏ:\n" + destinationStop.stopName + '\n' + destinationStop.departure;
+                        destinationLabel.Text = "Прибуття:\n" + destinationStop.stopName + '\n' + destinationStop.departure;
                         destinationLabel.Location = new Point(545, 15);
                         destinationLabel.AutoSize = true;
 
                         Label departureLabel = new Label();
-                        departureLabel.Text = "Р’С–РґРїСЂР°РІР»РµРЅРЅСЏ:\n" + departureStop.stopName + '\n' + departureStop.departure;
+                        departureLabel.Text = "Відправлення:\n" + departureStop.stopName + '\n' + departureStop.departure;
                         departureLabel.Location = new Point(298, 15);
                         departureLabel.AutoSize = true;
 
@@ -68,12 +68,12 @@ namespace WinFormsApp1
                         int startIndex = correctRoutes[i].findStopIndexByName(departureBox.Text);
                         int endIndex = correctRoutes[i].findStopIndexByName(destinationBox.Text);
                         int freeSeats = correctRoutes[i].getFreeSeats(startIndex, endIndex).Count;
-                        emptySeatsLabel.Text = "РљС–Р»СЊРєС–СЃС‚СЊ РІС–Р»СЊРЅРёС… РјС–СЃС†СЊ: " + Convert.ToString(freeSeats);
+                        emptySeatsLabel.Text = "Кількість вільних місць: " + Convert.ToString(freeSeats);
                         emptySeatsLabel.Location = new Point(27, 45);
                         emptySeatsLabel.AutoSize = true;
 
                         Button goTicketingButton = new Button();
-                        goTicketingButton.Text = "РџРµСЂРµР№С‚Рё РґРѕ РѕС„РѕСЂРјР»РµРЅРЅСЏ РєРІРёС‚РєСѓ";
+                        goTicketingButton.Text = "Перейти до оформлення квитку";
                         goTicketingButton.Location = new Point(783, 45);
                         goTicketingButton.Size = new Size(206, 23);
                         Route tempRoute = correctRoutes[i];
@@ -86,7 +86,7 @@ namespace WinFormsApp1
 
 
                         Button detailInformationButton = new Button();
-                        detailInformationButton.Text = "Р”РµС‚Р°Р»СЊРЅР° С–РЅС„РѕСЂРјР°С†С–СЏ РїСЂРѕ СЂРµР№СЃ";
+                        detailInformationButton.Text = "Детальна інформація про рейс";
                         detailInformationButton.Location = new Point(783, 15);
                         detailInformationButton.Size = new Size(206, 23);
                         void goDetailInformation(object? sender, EventArgs e)
