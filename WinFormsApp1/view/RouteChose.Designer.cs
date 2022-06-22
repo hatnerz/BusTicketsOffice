@@ -77,7 +77,7 @@
             this.PageCaption.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PageCaption.AutoSize = true;
             this.PageCaption.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PageCaption.Location = new System.Drawing.Point(416, 33);
+            this.PageCaption.Location = new System.Drawing.Point(424, 33);
             this.PageCaption.Name = "PageCaption";
             this.PageCaption.Size = new System.Drawing.Size(281, 45);
             this.PageCaption.TabIndex = 0;
@@ -106,17 +106,17 @@
             // 
             // dateDepartureBox
             // 
-            this.dateDepartureBox.Location = new System.Drawing.Point(514, 59);
+            this.dateDepartureBox.Location = new System.Drawing.Point(510, 62);
             this.dateDepartureBox.Name = "dateDepartureBox";
-            this.dateDepartureBox.Size = new System.Drawing.Size(144, 23);
+            this.dateDepartureBox.Size = new System.Drawing.Size(179, 23);
             this.dateDepartureBox.TabIndex = 6;
             // 
             // findRoutesButton
             // 
             this.findRoutesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.findRoutesButton.Location = new System.Drawing.Point(420, 110);
+            this.findRoutesButton.Location = new System.Drawing.Point(429, 108);
             this.findRoutesButton.Name = "findRoutesButton";
-            this.findRoutesButton.Size = new System.Drawing.Size(201, 23);
+            this.findRoutesButton.Size = new System.Drawing.Size(201, 29);
             this.findRoutesButton.TabIndex = 5;
             this.findRoutesButton.Text = "Показати доступні рейси";
             this.findRoutesButton.UseVisualStyleBackColor = true;
@@ -128,16 +128,16 @@
             this.destinationBox.CausesValidation = false;
             this.destinationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.destinationBox.FormattingEnabled = true;
-            this.destinationBox.Location = new System.Drawing.Point(810, 59);
+            this.destinationBox.Location = new System.Drawing.Point(875, 62);
             this.destinationBox.Name = "destinationBox";
-            this.destinationBox.Size = new System.Drawing.Size(155, 23);
+            this.destinationBox.Size = new System.Drawing.Size(141, 23);
             this.destinationBox.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(393, 62);
+            this.label3.Location = new System.Drawing.Point(364, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 15);
             this.label3.TabIndex = 3;
@@ -148,16 +148,16 @@
             this.departureBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.departureBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departureBox.FormattingEnabled = true;
-            this.departureBox.Location = new System.Drawing.Point(218, 59);
+            this.departureBox.Location = new System.Drawing.Point(185, 62);
             this.departureBox.Name = "departureBox";
-            this.departureBox.Size = new System.Drawing.Size(167, 23);
+            this.departureBox.Size = new System.Drawing.Size(151, 23);
             this.departureBox.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(675, 62);
+            this.label2.Location = new System.Drawing.Point(726, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 15);
             this.label2.TabIndex = 1;
@@ -167,7 +167,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 62);
+            this.label1.Location = new System.Drawing.Point(31, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 15);
             this.label1.TabIndex = 0;
@@ -331,13 +331,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.routeChoseMenuItem,
             this.returnTicketMenuItem,
             this.routeEditMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1112, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1122, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -388,19 +389,20 @@
             // 
             // RouteChose
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1112, 681);
+            this.ClientSize = new System.Drawing.Size(1122, 676);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelRoutes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "RouteChose";
             this.Text = "BusTicketsOffice";
             this.Activated += new System.EventHandler(this.RouteChose_Activated);
+            this.Load += new System.EventHandler(this.RouteChose_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).EndInit();

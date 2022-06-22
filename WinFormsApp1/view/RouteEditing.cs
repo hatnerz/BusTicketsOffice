@@ -43,6 +43,8 @@ namespace WinFormsApp1
             {
                 AllRoutes.routes.Remove((Route)routeChose.SelectedItem);
                 updateRouteChose();
+                AllRoutes.Save(Constants.PathRoutes);
+                MessageBox.Show("Операція успішна", Constants.SuccessHead, MessageBoxButtons.OK);
             }
         }
 
@@ -65,6 +67,11 @@ namespace WinFormsApp1
                     DateTime departure = Convert.ToDateTime(stopInfo[1] + " " + stopInfo[2]);
                     float price = float.Parse(stopInfo[3]);
                     temp.Add(new Stop(departure, stopName, price));
+                }
+                for (int i = 1; i < stopsInfo.Length; i++)
+                {
+                    if (temp[i].departure <= temp[i - 1].departure)
+                        throw new Exception();
                 }
                 AllRoutes.routes.Add(new Route(temp, routeNumber, seatNumber));
                 updateRouteChose();

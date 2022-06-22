@@ -6,6 +6,7 @@ namespace WinFormsApp1
     {
         public RouteChose()
         {
+            Font = new Font(Font.Name, 9f * 96f / CreateGraphics().DpiX, Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
             InitializeComponent();
             AllRoutes.Load(Constants.PathRoutes);
             ListOfCities.Load(Constants.PathCities);
@@ -14,11 +15,18 @@ namespace WinFormsApp1
             AllRoutes.Save(Constants.PathRoutes);
             AllPassangers.Save(Constants.PathPassangers);
             ListOfCities.Save(Constants.PathCities);
-            departureBox.Items.AddRange(ListOfCities.cities.ToArray());
-            destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
+            updateCitiesChose();
             dateDepartureBox.MinDate = DateTime.Now;
             DateTime Max = DateTime.Now;
             dateDepartureBox.MaxDate = Max.AddMonths(1);
+        }
+
+        private void updateCitiesChose()
+        {
+            departureBox.Items.Clear();
+            destinationBox.Items.Clear();
+            departureBox.Items.AddRange(ListOfCities.cities.ToArray());
+            destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
         }
 
         private void updateRoutes()
@@ -81,7 +89,10 @@ namespace WinFormsApp1
                         Route tempRoute = correctRoutes[i];
                         void goTicketingButton_Click(object? sender, EventArgs e)
                         {
-                            startTicketing(tempRoute, departureStop, destinationStop);
+                            if (freeSeats != 0)
+                                startTicketing(tempRoute, departureStop, destinationStop);
+                            else
+                                MessageBox.Show("На даний рейс відсутні вільні місця", Constants.ErrorHead, MessageBoxButtons.OK);
                         }
 
                         goTicketingButton.Click += goTicketingButton_Click;
@@ -134,11 +145,14 @@ namespace WinFormsApp1
         private void RouteChose_Activated(object sender, EventArgs e)
         {
             updateRoutes();
+            updateCitiesChose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult exit = MessageBox.Show("Ви точно бажаєте вийти з програми?", Constants.ConfirmHead, MessageBoxButtons.YesNo);
+            if(exit == DialogResult.Yes)
+                this.Close();
         }
 
         private void returnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,6 +165,11 @@ namespace WinFormsApp1
         {
             Form temp = new RouteEditing();
             temp.ShowDialog();
+        }
+
+        private void RouteChose_Load(object sender, EventArgs e)
+        {
+            updateRoutes();
         }
     }
 }
