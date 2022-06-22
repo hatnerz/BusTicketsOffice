@@ -21,13 +21,13 @@ namespace WinFormsApp1
         private void showTickets_Click(object sender, EventArgs e)
         {
             if (phoneMaskTextBox.Text.Length != 17)
-                MessageBox.Show("Введіть номер телефону", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show("Введіть номер телефону", Constants.ErrorHead, MessageBoxButtons.OK);
             else
             {
                 passangerTickets = AllRoutes.FindPassangerTicketsByNumber(phoneMaskTextBox.Text);
                 if(passangerTickets.Count == 0)
                 {
-                    MessageBox.Show("Не знайдено жодного квитку за вказаним номером телефону", "Помилка", MessageBoxButtons.OK);
+                    MessageBox.Show("Не знайдено жодного квитку за вказаним номером телефону", Constants.ErrorHead, MessageBoxButtons.OK);
                 }
                 passangerTicketsGrid.DataSource = passangerTickets.GetRange(0, passangerTickets.Count);
             }
@@ -35,14 +35,14 @@ namespace WinFormsApp1
 
         private void passangerTicketsGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DialogResult rez = MessageBox.Show("Ви впевнені, що хочете повернути вибраний квиток?", "Підтвердження",
+            DialogResult rez = MessageBox.Show("Ви впевнені, що хочете повернути вибраний квиток?", Constants.ConfirmHead,
                 MessageBoxButtons.YesNo);
             if(rez == DialogResult.Yes)
             {
                 AllRoutes.deleteTicket(passangerTickets[e.RowIndex]);
                 passangerTickets.RemoveAt(e.RowIndex);
                 passangerTicketsGrid.DataSource = passangerTickets.GetRange(0, passangerTickets.Count);
-                AllRoutes.Save("routes.json");
+                AllRoutes.Save(Constants.PathRoutes);
             }
         }
 

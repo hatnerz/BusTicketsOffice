@@ -58,9 +58,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.routeChoseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnTicketMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource)).BeginInit();
@@ -100,7 +102,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Виберіть зі списку дату та пункт відправлення, пункт призначення для отримання ін" +
-    "формації";
+    "формації і оформлення квитків";
             // 
             // dateDepartureBox
             // 
@@ -332,8 +334,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.routeChoseMenuItem,
             this.returnTicketMenuItem,
-            this.routeEditMenuItem,
-            this.helpToolStripMenuItem1});
+            this.routeEditMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1112, 24);
@@ -342,29 +343,48 @@
             // 
             // routeChoseMenuItem
             // 
+            this.routeChoseMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
             this.routeChoseMenuItem.Name = "routeChoseMenuItem";
-            this.routeChoseMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.routeChoseMenuItem.Text = "Оформлення квитків";
+            this.routeChoseMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.routeChoseMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // returnTicketMenuItem
             // 
+            this.returnTicketMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnToolStripMenuItem});
             this.returnTicketMenuItem.Name = "returnTicketMenuItem";
-            this.returnTicketMenuItem.Size = new System.Drawing.Size(138, 20);
-            this.returnTicketMenuItem.Text = "Повернення квитків";
-            this.returnTicketMenuItem.Click += new System.EventHandler(this.returnTicketMenuItem_Click);
+            this.returnTicketMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.returnTicketMenuItem.Text = "Квитки";
+            // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.returnToolStripMenuItem.Text = "Повернення";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // routeEditMenuItem
             // 
+            this.routeEditMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editingToolStripMenuItem});
             this.routeEditMenuItem.Name = "routeEditMenuItem";
-            this.routeEditMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.routeEditMenuItem.Text = "Редагування рейсів";
-            this.routeEditMenuItem.Click += new System.EventHandler(this.routeEditMenuItem_Click);
+            this.routeEditMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.routeEditMenuItem.Text = "Рейси";
             // 
-            // helpToolStripMenuItem1
+            // editingToolStripMenuItem
             // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
-            this.helpToolStripMenuItem1.Text = "Help";
+            this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
+            this.editingToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.editingToolStripMenuItem.Text = "Редагування";
+            this.editingToolStripMenuItem.Click += new System.EventHandler(this.editingToolStripMenuItem_Click);
             // 
             // RouteChose
             // 
@@ -381,7 +401,6 @@
             this.Name = "RouteChose";
             this.Text = "BusTicketsOffice";
             this.Activated += new System.EventHandler(this.RouteChose_Activated);
-            this.Load += new System.EventHandler(this.RouteChose_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).EndInit();
@@ -430,6 +449,8 @@
         private ToolStripMenuItem routeChoseMenuItem;
         private ToolStripMenuItem returnTicketMenuItem;
         private ToolStripMenuItem routeEditMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem returnToolStripMenuItem;
+        private ToolStripMenuItem editingToolStripMenuItem;
     }
 }

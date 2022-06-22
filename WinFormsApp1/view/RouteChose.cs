@@ -7,11 +7,13 @@ namespace WinFormsApp1
         public RouteChose()
         {
             InitializeComponent();
-            AllRoutes.Load("routes.json");
-            ListOfCities.Load("cities.json");
-            AllPassangers.Load("passangers.json");
+            AllRoutes.Load(Constants.PathRoutes);
+            ListOfCities.Load(Constants.PathCities);
+            AllPassangers.Load(Constants.PathPassangers);
             AllRoutes.deleteOutdatesRoutes();
-            AllRoutes.Save("routes.json");
+            AllRoutes.Save(Constants.PathRoutes);
+            AllPassangers.Save(Constants.PathPassangers);
+            ListOfCities.Save(Constants.PathCities);
             departureBox.Items.AddRange(ListOfCities.cities.ToArray());
             destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
             dateDepartureBox.MinDate = DateTime.Now;
@@ -120,13 +122,13 @@ namespace WinFormsApp1
         private void startTicketing(Route route, Stop departure, Stop destination)
         {
             Ticketing f = new Ticketing(route, departure, destination);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void startDetailInformation(Route route, Stop departure, Stop destination, int freeSeats)
         {
             DetailInformation f = new DetailInformation(route, departure, destination, freeSeats);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void RouteChose_Activated(object sender, EventArgs e)
@@ -134,23 +136,21 @@ namespace WinFormsApp1
             updateRoutes();
         }
 
-        private void routeEditMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Program.Context.MainForm = new RouteEditing();
             this.Close();
-            Program.Context.MainForm.Show();
         }
 
-        private void RouteChose_Load(object sender, EventArgs e)
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form temp = new TicketsReturn();
+            temp.ShowDialog();
         }
 
-        private void returnTicketMenuItem_Click(object sender, EventArgs e)
+        private void editingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Program.Context.MainForm = new TicketsReturn();
-            this.Close();
-            Program.Context.MainForm.Show();
+            Form temp = new RouteEditing();
+            temp.ShowDialog();
         }
     }
 }

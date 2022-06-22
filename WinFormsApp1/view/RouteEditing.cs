@@ -38,7 +38,7 @@ namespace WinFormsApp1
         private void deleteRouteButton_Click(object sender, EventArgs e)
         {
             if (routeChose.Text == "")
-                MessageBox.Show("Виберіть маршрут для видалення", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show("Виберіть маршрут для видалення", Constants.ErrorHead, MessageBoxButtons.OK);
             else
             {
                 AllRoutes.routes.Remove((Route)routeChose.SelectedItem);
@@ -68,13 +68,13 @@ namespace WinFormsApp1
                 }
                 AllRoutes.routes.Add(new Route(temp, routeNumber, seatNumber));
                 updateRouteChose();
-                MessageBox.Show("Маршрут успішно додано.", "Успіх", MessageBoxButtons.OK);
-                AllRoutes.Save("routes.json");
-                ListOfCities.Save("cities.json");
+                MessageBox.Show("Маршрут успішно додано", Constants.SuccessHead, MessageBoxButtons.OK);
+                AllRoutes.Save(Constants.PathRoutes);
+                ListOfCities.Save(Constants.PathCities);
             }
             catch
             {
-                MessageBox.Show("Перевірте правильність введення даних", "Помилки", MessageBoxButtons.OK);
+                MessageBox.Show("Перевірте правильність введення даних", Constants.ErrorHead, MessageBoxButtons.OK);
             }
             
         }
@@ -96,22 +96,22 @@ namespace WinFormsApp1
         private void deleteUnused_Click(object sender, EventArgs e)
         {
             ListOfCities.DeleteUnused();
-            ListOfCities.Save("cities.json");
-            MessageBox.Show("Операція успішна", "Успіх", MessageBoxButtons.OK);
+            ListOfCities.Save(Constants.PathCities);
+            MessageBox.Show("Операція успішна", Constants.SuccessHead, MessageBoxButtons.OK);
         }
 
         private void addCity_Click(object sender, EventArgs e)
         {
             if (cityName.Text.Length == 0)
-                MessageBox.Show("Введіть назву зупинки", "Помилки", MessageBoxButtons.OK);
+                MessageBox.Show("Введіть назву зупинки", Constants.ErrorHead, MessageBoxButtons.OK);
             else
             {
-                if(ListOfCities.AddCity(cityName.Text) == true)
-                    MessageBox.Show("Назву зупинки успішно додано", "Успіх", MessageBoxButtons.OK);
+                if (ListOfCities.AddCity(cityName.Text) == true)
+                    MessageBox.Show("Назву зупинки успішно додано", Constants.SuccessHead, MessageBoxButtons.OK);
                 else
-                    MessageBox.Show("Зупинка з такою назвою вже є у списку", "Помилки", MessageBoxButtons.OK);
+                    MessageBox.Show("Зупинка з такою назвою вже є у списку", Constants.ErrorHead, MessageBoxButtons.OK);
             }
-            ListOfCities.Save("cities.json");
+            ListOfCities.Save(Constants.PathCities);
         }
     }
 }

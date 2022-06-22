@@ -58,6 +58,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.routeInfo);
             this.groupBox1.Controls.Add(this.stops);
             this.groupBox1.Controls.Add(this.freeSeats);
@@ -77,6 +80,7 @@
             // 
             // routeInfo
             // 
+            this.routeInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.routeInfo.Location = new System.Drawing.Point(21, 74);
             this.routeInfo.Name = "routeInfo";
             this.routeInfo.ReadOnly = true;
@@ -85,6 +89,7 @@
             // 
             // stops
             // 
+            this.stops.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.stops.Location = new System.Drawing.Point(369, 74);
             this.stops.Multiline = true;
             this.stops.Name = "stops";
@@ -94,6 +99,7 @@
             // 
             // freeSeats
             // 
+            this.freeSeats.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.freeSeats.Location = new System.Drawing.Point(195, 170);
             this.freeSeats.Name = "freeSeats";
             this.freeSeats.ReadOnly = true;
@@ -102,6 +108,7 @@
             // 
             // seatNumber
             // 
+            this.seatNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.seatNumber.Location = new System.Drawing.Point(19, 170);
             this.seatNumber.Name = "seatNumber";
             this.seatNumber.ReadOnly = true;
@@ -110,6 +117,7 @@
             // 
             // ticketPrice
             // 
+            this.ticketPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ticketPrice.Location = new System.Drawing.Point(195, 74);
             this.ticketPrice.Name = "ticketPrice";
             this.ticketPrice.ReadOnly = true;
@@ -118,6 +126,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(236, 148);
             this.label5.Name = "label5";
@@ -127,6 +136,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(44, 133);
             this.label4.Name = "label4";
@@ -136,6 +146,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(229, 50);
             this.label3.Name = "label3";
@@ -145,6 +156,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(450, 50);
             this.label2.Name = "label2";
@@ -154,6 +166,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 50);
             this.label1.Name = "label1";

@@ -36,7 +36,7 @@ namespace WinFormsApp1
         {
             if (phoneMaskTextBox.Text.Length!=17 || firstNameTextBox.Text == "" ||
                 lastNameTextBox.Text == "" || patronymicNameTextBox.Text == "" || seatCombo.Text == "")
-                MessageBox.Show("Введіть усі необхідні дані", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show("Введіть усі необхідні дані", Constants.ErrorHead, MessageBoxButtons.OK);
             else
             {
                 string phone = phoneMaskTextBox.Text;
@@ -45,9 +45,9 @@ namespace WinFormsApp1
                 string patronymicName = patronymicNameTextBox.Text;
                 int seat = Convert.ToInt32(seatCombo.Text);
                 AllPassangers.addTicketToPassangerByNumber(phone, route, departure.stopName, destination.stopName, seat, firstName, lastName, patronymicName);
-                MessageBox.Show("Квиток успішно придбано", "Успіх", MessageBoxButtons.OK);
-                AllPassangers.Save("passangers.json");
-                AllRoutes.Save("routes.json");
+                MessageBox.Show("Квиток успішно придбано", Constants.SuccessHead, MessageBoxButtons.OK);
+                AllPassangers.Save(Constants.PathPassangers);
+                AllRoutes.Save(Constants.PathRoutes);
                 this.Close();
             }
         }

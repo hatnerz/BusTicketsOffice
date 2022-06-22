@@ -20,16 +20,18 @@ namespace WinFormsApp1
                 if (toLoad != null)
                     ListOfCities.cities = JsonSerializer.Deserialize<List<string>>(toLoad);
                 else
-                    MessageBox.Show("Сталася помилка при завантаженні файлу (назви зупинок). Файл не знайдено або некоректні дані.", "Помилка", MessageBoxButtons.OK);
+                    MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
                 sr.Close();
             }
             catch
             {
-                MessageBox.Show("Сталася помилка при завантаженні файлу (назви зупинок). Файл не знайдено або некоректні дані.", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
             }
         }
         public static void Save(string fileName)
         {
+            if (!Directory.Exists(Constants.Directory))
+                Directory.CreateDirectory(Constants.Directory);
             string toSave = JsonSerializer.Serialize(ListOfCities.cities);
             StreamWriter sw = new StreamWriter(fileName, false);
             sw.WriteLine(toSave);

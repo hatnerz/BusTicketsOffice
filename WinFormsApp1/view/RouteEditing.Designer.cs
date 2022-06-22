@@ -45,11 +45,6 @@
             this.routeNumberAdd = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.routeChoseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnTicketMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.addCity = new System.Windows.Forms.Button();
             this.cityName = new System.Windows.Forms.TextBox();
@@ -59,7 +54,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatNumberAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeNumberAdd)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +62,7 @@
             this.PageCaption.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PageCaption.AutoSize = true;
             this.PageCaption.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PageCaption.Location = new System.Drawing.Point(323, 38);
+            this.PageCaption.Location = new System.Drawing.Point(323, 21);
             this.PageCaption.Name = "PageCaption";
             this.PageCaption.Size = new System.Drawing.Size(333, 45);
             this.PageCaption.TabIndex = 1;
@@ -241,45 +235,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Номер рейсу";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.routeChoseMenuItem,
-            this.returnTicketMenuItem,
-            this.routeEditMenuItem,
-            this.helpToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(979, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // routeChoseMenuItem
-            // 
-            this.routeChoseMenuItem.Name = "routeChoseMenuItem";
-            this.routeChoseMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.routeChoseMenuItem.Text = "Оформлення квитків";
-            this.routeChoseMenuItem.Click += new System.EventHandler(this.routeChoseMenuItem_Click);
-            // 
-            // returnTicketMenuItem
-            // 
-            this.returnTicketMenuItem.Name = "returnTicketMenuItem";
-            this.returnTicketMenuItem.Size = new System.Drawing.Size(138, 20);
-            this.returnTicketMenuItem.Text = "Повернення квитків";
-            this.returnTicketMenuItem.Click += new System.EventHandler(this.returnTicketMenuItem_Click);
-            // 
-            // routeEditMenuItem
-            // 
-            this.routeEditMenuItem.Name = "routeEditMenuItem";
-            this.routeEditMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.routeEditMenuItem.Text = "Редагування рейсів";
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.addCity);
@@ -336,7 +291,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 450);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
@@ -349,8 +303,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatNumberAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeNumberAdd)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -375,11 +327,6 @@
         private TextBox stopsInfoAdd;
         private NumericUpDown seatNumberAdd;
         private Label label3;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem routeChoseMenuItem;
-        private ToolStripMenuItem returnTicketMenuItem;
-        private ToolStripMenuItem routeEditMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem1;
         private Label label4;
         private GroupBox groupBox3;
         private TextBox cityName;

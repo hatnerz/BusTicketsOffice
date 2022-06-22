@@ -20,16 +20,18 @@ namespace WinFormsApp1
                 if (toLoad != null)
                     AllPassangers.passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
                 else
-                    MessageBox.Show("Сталася помилка при завантаженні файлу (інформація про пасажирів). Файл не знайдено або некоректні дані", "Помилка", MessageBoxButtons.OK);
+                    MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
                 sr.Close();
             }
             catch
             {
-                MessageBox.Show("Сталася помилка при завантаженні файлу (інформація про пасажирів). Файл не знайдено або некоректні дані", "Помилка", MessageBoxButtons.OK);
+                MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
             }
         }
         public static void Save(string fileName)
         {
+            if (!Directory.Exists(Constants.Directory))
+                Directory.CreateDirectory(Constants.Directory);
             string toSave = JsonSerializer.Serialize(AllPassangers.passangers);
             StreamWriter sw = new StreamWriter(fileName, false);
             sw.WriteLine(toSave);
