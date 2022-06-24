@@ -143,5 +143,27 @@ namespace WinFormsApp1
             }
             return sumPrice;
         }
+
+        public List<Ticket> GetEnterPassangers(string stopName)
+        {
+            List<Ticket> temp = new List<Ticket>();
+            for(int i = 0; i<tickets.Count; i++)
+            {
+                if(tickets[i].departure == stopName)
+                    temp.Add(tickets[i]);
+            }
+            return temp;
+        }
+
+        public List<Ticket> GetExitPassangers(string stopName)
+        {
+            List<Ticket> temp = new List<Ticket>();
+            for (int i = 0; i < tickets.Count; i++)
+            {
+                if (tickets[i].destination == stopName)
+                    temp.Add(tickets[i]);
+            }
+            return temp;
+        }
     }
 }

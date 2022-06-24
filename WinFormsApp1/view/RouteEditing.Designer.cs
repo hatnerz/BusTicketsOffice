@@ -297,6 +297,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RouteEditing";
             this.Text = "BusTicketsOffice";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RouteEditing_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

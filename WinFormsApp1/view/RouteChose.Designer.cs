@@ -42,6 +42,7 @@
             this.listOfCitiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listOfCitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelRoutes = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -63,6 +64,7 @@
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routeEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.landingListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource)).BeginInit();
@@ -106,6 +108,7 @@
             // 
             // dateDepartureBox
             // 
+            this.dateDepartureBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateDepartureBox.Location = new System.Drawing.Point(510, 62);
             this.dateDepartureBox.Name = "dateDepartureBox";
             this.dateDepartureBox.Size = new System.Drawing.Size(179, 23);
@@ -183,15 +186,28 @@
             // 
             // panelRoutes
             // 
+            this.panelRoutes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelRoutes.AutoScroll = true;
             this.panelRoutes.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panelRoutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRoutes.Controls.Add(this.label12);
             this.panelRoutes.Controls.Add(this.panel3);
             this.panelRoutes.Controls.Add(this.panel2);
             this.panelRoutes.Location = new System.Drawing.Point(30, 253);
             this.panelRoutes.Name = "panelRoutes";
             this.panelRoutes.Size = new System.Drawing.Size(1058, 400);
             this.panelRoutes.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(12, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 15);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Найближчий";
             // 
             // panel3
             // 
@@ -375,7 +391,8 @@
             // routeEditMenuItem
             // 
             this.routeEditMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editingToolStripMenuItem});
+            this.editingToolStripMenuItem,
+            this.landingListToolStripMenuItem});
             this.routeEditMenuItem.Name = "routeEditMenuItem";
             this.routeEditMenuItem.Size = new System.Drawing.Size(55, 20);
             this.routeEditMenuItem.Text = "Рейси";
@@ -383,9 +400,16 @@
             // editingToolStripMenuItem
             // 
             this.editingToolStripMenuItem.Name = "editingToolStripMenuItem";
-            this.editingToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.editingToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.editingToolStripMenuItem.Text = "Редагування";
             this.editingToolStripMenuItem.Click += new System.EventHandler(this.editingToolStripMenuItem_Click);
+            // 
+            // landingListToolStripMenuItem
+            // 
+            this.landingListToolStripMenuItem.Name = "landingListToolStripMenuItem";
+            this.landingListToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.landingListToolStripMenuItem.Text = "Посадкові відомості";
+            this.landingListToolStripMenuItem.Click += new System.EventHandler(this.landingListToolStripMenuItem_Click);
             // 
             // RouteChose
             // 
@@ -396,9 +420,8 @@
             this.Controls.Add(this.panelRoutes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(700, 500);
+            this.MinimumSize = new System.Drawing.Size(1138, 715);
             this.Name = "RouteChose";
             this.Text = "BusTicketsOffice";
             this.Activated += new System.EventHandler(this.RouteChose_Activated);
@@ -408,6 +431,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOfCitiesBindingSource)).EndInit();
             this.panelRoutes.ResumeLayout(false);
+            this.panelRoutes.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -454,5 +478,7 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem returnToolStripMenuItem;
         private ToolStripMenuItem editingToolStripMenuItem;
+        private ToolStripMenuItem landingListToolStripMenuItem;
+        private Label label12;
     }
 }

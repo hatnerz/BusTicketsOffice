@@ -18,6 +18,10 @@ namespace WinFormsApp1
         public string firstName { get; private set; }
         public string lastName { get; private set; }
         public string patronymicName { get; private set; }
+        public string FullName
+        {
+            get { return firstName + " " + lastName + " " + patronymicName; }
+        }
 
         public Ticket(string routeInfo, float price, int seatNumber, string passangerPhoneNumber, 
             string departure, string destination, string firstName, string lastName, string patronymicName)

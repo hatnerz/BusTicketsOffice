@@ -21,7 +21,7 @@ namespace WinFormsApp1
             dateDepartureBox.MaxDate = Max.AddMonths(1);
         }
 
-        private void updateCitiesChose()
+        public void updateCitiesChose()
         {
             departureBox.Items.Clear();
             destinationBox.Items.Clear();
@@ -47,6 +47,7 @@ namespace WinFormsApp1
             else
             {
                 List<Route> correctRoutes = AllRoutes.FindRouteByCities(departureBox.Text, destinationBox.Text, dateDepartureBox.Value);
+                AllRoutes.SortByDepartureDate(correctRoutes);
                 if (correctRoutes.Count == 0)
                 {
                     infoText.Text = "Рейсів за вказаним напрямком на вказану дату не знайдено.";
@@ -56,6 +57,16 @@ namespace WinFormsApp1
                 {
                     for (int i = 0; i < correctRoutes.Count; i++)
                     {
+                        Panel availableRoutePanel = new Panel();
+                        if (i == 0)
+                        {
+                            Label nearest = new Label();
+                            nearest.Text = "Найближчий";
+                            nearest.Location = new Point(0, 0);
+                            nearest.AutoSize = true;
+                            availableRoutePanel.Controls.Add(nearest);
+                        }
+
                         Label routeNumLabel = new Label();
                         routeNumLabel.Text = "Рейс № " + correctRoutes[i].routeNumber;
                         routeNumLabel.Location = new Point(27, 15);
@@ -109,8 +120,6 @@ namespace WinFormsApp1
                         detailInformationButton.Click += goDetailInformation;
 
 
-
-                        Panel availableRoutePanel = new Panel();
                         availableRoutePanel.Size = new Size(1020, 78);
                         availableRoutePanel.Location = new Point(12, i * 85 + 12);
                         availableRoutePanel.BorderStyle = BorderStyle.FixedSingle;
@@ -145,7 +154,6 @@ namespace WinFormsApp1
         private void RouteChose_Activated(object sender, EventArgs e)
         {
             updateRoutes();
-            updateCitiesChose();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,13 +171,19 @@ namespace WinFormsApp1
 
         private void editingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form temp = new RouteEditing();
+            Form temp = new RouteEditing(this);
             temp.ShowDialog();
         }
 
         private void RouteChose_Load(object sender, EventArgs e)
         {
             updateRoutes();
+        }
+
+        private void landingListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form temp = new LandingList();
+            temp.ShowDialog();
         }
     }
 }

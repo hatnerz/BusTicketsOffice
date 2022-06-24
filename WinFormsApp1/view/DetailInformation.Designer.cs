@@ -81,6 +81,7 @@
             // routeInfo
             // 
             this.routeInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.routeInfo.BackColor = System.Drawing.SystemColors.Info;
             this.routeInfo.Location = new System.Drawing.Point(21, 74);
             this.routeInfo.Name = "routeInfo";
             this.routeInfo.ReadOnly = true;
@@ -90,6 +91,7 @@
             // stops
             // 
             this.stops.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stops.BackColor = System.Drawing.SystemColors.Info;
             this.stops.Location = new System.Drawing.Point(369, 74);
             this.stops.Multiline = true;
             this.stops.Name = "stops";
@@ -100,6 +102,7 @@
             // freeSeats
             // 
             this.freeSeats.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.freeSeats.BackColor = System.Drawing.SystemColors.Info;
             this.freeSeats.Location = new System.Drawing.Point(195, 170);
             this.freeSeats.Name = "freeSeats";
             this.freeSeats.ReadOnly = true;
@@ -109,6 +112,7 @@
             // seatNumber
             // 
             this.seatNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.seatNumber.BackColor = System.Drawing.SystemColors.Info;
             this.seatNumber.Location = new System.Drawing.Point(19, 170);
             this.seatNumber.Name = "seatNumber";
             this.seatNumber.ReadOnly = true;
@@ -118,6 +122,7 @@
             // ticketPrice
             // 
             this.ticketPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ticketPrice.BackColor = System.Drawing.SystemColors.Info;
             this.ticketPrice.Location = new System.Drawing.Point(195, 74);
             this.ticketPrice.Name = "ticketPrice";
             this.ticketPrice.ReadOnly = true;

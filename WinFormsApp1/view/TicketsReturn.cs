@@ -45,19 +45,5 @@ namespace WinFormsApp1
                 AllRoutes.Save(Constants.PathRoutes);
             }
         }
-
-        private void routeEditMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.Context.MainForm = new RouteEditing();
-            this.Close();
-            Program.Context.MainForm.Show();
-        }
-
-        private void routeChoseMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.Context.MainForm = new RouteChose();
-            this.Close();
-            Program.Context.MainForm.Show();
-        }
     }
 }

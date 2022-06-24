@@ -12,8 +12,10 @@ namespace WinFormsApp1
 {
     public partial class RouteEditing : Form
     {
-        public RouteEditing()
+        private RouteChose senderForm;
+        public RouteEditing(RouteChose sender)
         {
+            senderForm = sender;
             InitializeComponent();
             dateRoutePicker.MinDate = DateTime.Now;
             DateTime Max = DateTime.Now;
@@ -86,20 +88,6 @@ namespace WinFormsApp1
             
         }
 
-        private void routeChoseMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.Context.MainForm = new RouteChose();
-            this.Close();
-            Program.Context.MainForm.Show();
-        }
-
-        private void returnTicketMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.Context.MainForm = new TicketsReturn();
-            this.Close();
-            Program.Context.MainForm.Show();
-        }
-
         private void deleteUnused_Click(object sender, EventArgs e)
         {
             ListOfCities.DeleteUnused();
@@ -119,6 +107,11 @@ namespace WinFormsApp1
                     MessageBox.Show("Зупинка з такою назвою вже є у списку", Constants.ErrorHead, MessageBoxButtons.OK);
             }
             ListOfCities.Save(Constants.PathCities);
+        }
+
+        private void RouteEditing_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            senderForm.updateCitiesChose();
         }
     }
 }

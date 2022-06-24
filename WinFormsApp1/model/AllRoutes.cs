@@ -113,5 +113,24 @@ namespace WinFormsApp1
                 }
             }
         }
+        
+        public static List<Route> SortByDepartureDate(List<Route> routes)
+        {
+            Route temp;
+            for(int i = 0; i < routes.Count; i++)
+            {
+                for(int j = 0; j < routes.Count-1-i; j++)
+                {
+                    if(routes[j].stops[0].departure > routes[j+1].stops[0].departure)
+                    {
+                        temp = routes[j];
+                        routes[j] = routes[j+1];
+                        routes[j+1] = temp;
+                    }
+                }
+            }
+            return routes;
+        }
+
     }
 }
