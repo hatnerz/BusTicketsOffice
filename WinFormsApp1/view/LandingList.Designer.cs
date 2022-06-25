@@ -145,7 +145,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(650, 300);
+            this.MinimumSize = new System.Drawing.Size(650, 400);
             this.Name = "LandingList";
             this.Text = "BusTicketsOffice";
             this.groupBox1.ResumeLayout(false);

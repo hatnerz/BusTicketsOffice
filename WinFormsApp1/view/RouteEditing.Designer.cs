@@ -71,6 +71,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.deleteRouteButton);
             this.groupBox1.Controls.Add(this.dateRoutePicker);
             this.groupBox1.Controls.Add(this.routeChose);
@@ -85,6 +87,7 @@
             // 
             // deleteRouteButton
             // 
+            this.deleteRouteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deleteRouteButton.Location = new System.Drawing.Point(120, 134);
             this.deleteRouteButton.Name = "deleteRouteButton";
             this.deleteRouteButton.Size = new System.Drawing.Size(144, 23);
@@ -95,6 +98,7 @@
             // 
             // dateRoutePicker
             // 
+            this.dateRoutePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateRoutePicker.Location = new System.Drawing.Point(120, 50);
             this.dateRoutePicker.MinDate = new System.DateTime(1753, 1, 20, 0, 0, 0, 0);
             this.dateRoutePicker.Name = "dateRoutePicker";
@@ -104,6 +108,7 @@
             // 
             // routeChose
             // 
+            this.routeChose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.routeChose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.routeChose.FormattingEnabled = true;
             this.routeChose.Location = new System.Drawing.Point(120, 84);
@@ -113,6 +118,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 87);
             this.label1.Name = "label1";
@@ -122,6 +128,7 @@
             // 
             // dateLabel
             // 
+            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Location = new System.Drawing.Point(25, 53);
             this.dateLabel.Name = "dateLabel";
@@ -131,6 +138,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.seatNumberAdd);
             this.groupBox2.Controls.Add(this.label3);
@@ -158,7 +168,8 @@
             // 
             // seatNumberAdd
             // 
-            this.seatNumberAdd.Location = new System.Drawing.Point(364, 263);
+            this.seatNumberAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.seatNumberAdd.Location = new System.Drawing.Point(380, 261);
             this.seatNumberAdd.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -180,8 +191,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(260, 267);
+            this.label3.Location = new System.Drawing.Point(276, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 15);
             this.label3.TabIndex = 12;
@@ -189,15 +201,19 @@
             // 
             // stopsInfoAdd
             // 
+            this.stopsInfoAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stopsInfoAdd.Location = new System.Drawing.Point(57, 68);
             this.stopsInfoAdd.Multiline = true;
             this.stopsInfoAdd.Name = "stopsInfoAdd";
-            this.stopsInfoAdd.Size = new System.Drawing.Size(377, 168);
+            this.stopsInfoAdd.Size = new System.Drawing.Size(415, 168);
             this.stopsInfoAdd.TabIndex = 11;
             // 
             // addRouteButton
             // 
-            this.addRouteButton.Location = new System.Drawing.Point(176, 302);
+            this.addRouteButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.addRouteButton.Location = new System.Drawing.Point(187, 301);
             this.addRouteButton.Name = "addRouteButton";
             this.addRouteButton.Size = new System.Drawing.Size(144, 23);
             this.addRouteButton.TabIndex = 5;
@@ -207,7 +223,8 @@
             // 
             // routeNumberAdd
             // 
-            this.routeNumberAdd.Location = new System.Drawing.Point(146, 263);
+            this.routeNumberAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.routeNumberAdd.Location = new System.Drawing.Point(159, 261);
             this.routeNumberAdd.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -228,8 +245,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 265);
+            this.label2.Location = new System.Drawing.Point(70, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 0;
@@ -237,6 +255,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.addCity);
             this.groupBox3.Controls.Add(this.cityName);
             this.groupBox3.Controls.Add(this.label6);
@@ -250,6 +269,7 @@
             // 
             // addCity
             // 
+            this.addCity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addCity.Location = new System.Drawing.Point(243, 90);
             this.addCity.Name = "addCity";
             this.addCity.Size = new System.Drawing.Size(144, 23);
@@ -260,6 +280,7 @@
             // 
             // cityName
             // 
+            this.cityName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cityName.Location = new System.Drawing.Point(24, 91);
             this.cityName.Name = "cityName";
             this.cityName.PlaceholderText = "Назва зупинки для додавання";
@@ -268,6 +289,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 33);
             this.label6.Name = "label6";
@@ -277,6 +299,7 @@
             // 
             // deleteUnused
             // 
+            this.deleteUnused.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deleteUnused.Location = new System.Drawing.Point(243, 37);
             this.deleteUnused.Name = "deleteUnused";
             this.deleteUnused.Size = new System.Drawing.Size(144, 23);
@@ -295,6 +318,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PageCaption);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(900, 480);
             this.Name = "RouteEditing";
             this.Text = "BusTicketsOffice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RouteEditing_FormClosed);

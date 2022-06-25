@@ -43,10 +43,15 @@ namespace WinFormsApp1
                 MessageBox.Show("Виберіть маршрут для видалення", Constants.ErrorHead, MessageBoxButtons.OK);
             else
             {
-                AllRoutes.routes.Remove((Route)routeChose.SelectedItem);
-                updateRouteChose();
-                AllRoutes.Save(Constants.PathRoutes);
-                MessageBox.Show("Операція успішна", Constants.SuccessHead, MessageBoxButtons.OK);
+                DialogResult rez = MessageBox.Show("Ви точно бажаєте видалити вибраний рейс?", Constants.ConfirmHead, MessageBoxButtons.YesNo);
+                if(rez == DialogResult.Yes)
+                {
+                    AllRoutes.routes.Remove((Route)routeChose.SelectedItem);
+                    updateRouteChose();
+                    AllRoutes.Save(Constants.PathRoutes);
+                    MessageBox.Show("Операція успішна", Constants.SuccessHead, MessageBoxButtons.OK);
+
+                }
             }
         }
 

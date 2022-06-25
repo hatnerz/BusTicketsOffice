@@ -11,7 +11,6 @@ namespace WinFormsApp1
     {
         public List<Stop> stops { get; private set; }
         public int routeNumber { get; private set; }
-        //[JsonInclude]
         public List<Ticket> tickets { get; set; }
         public int numberOfSeats { get; private set; }
         private bool[,] occupiedSeats { get; set; }

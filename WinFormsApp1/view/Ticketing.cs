@@ -21,7 +21,7 @@ namespace WinFormsApp1
             this.route = route;
             this.destination = destination;
             this.departure = departure;
-            routeNumberLabel.Text = "Рейс №" + route.routeNumber + " (" + route.stops[0].stopName + " " + route.stops.Last().stopName + ")";
+            routeNumberLabel.Text = "Рейс №" + route.routeNumber + " (" + route.stops[0].stopName + " - " + route.stops.Last().stopName + ")";
             destinationLabel.Text = "Прибуття: " + destination.stopName + " " + destination.departure;
             departureLabel.Text = "Відправлення: " + departure.stopName + " " + departure.departure;
             int depIndex = route.stops.IndexOf(departure);

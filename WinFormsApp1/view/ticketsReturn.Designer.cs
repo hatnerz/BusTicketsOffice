@@ -45,6 +45,7 @@
             this.passangerLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passangerPatronymicName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passangerTicketsGrid)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,8 @@
             this.passangerName,
             this.passangerLastName,
             this.passangerPatronymicName,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.fullName});
             this.passangerTicketsGrid.Location = new System.Drawing.Point(12, 197);
             this.passangerTicketsGrid.Name = "passangerTicketsGrid";
             this.passangerTicketsGrid.RowTemplate.Height = 25;
@@ -192,6 +194,13 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // fullName
+            // 
+            this.fullName.DataPropertyName = "FullName";
+            this.fullName.HeaderText = "fullName";
+            this.fullName.Name = "fullName";
+            this.fullName.Visible = false;
+            // 
             // TicketsReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -231,5 +240,6 @@
         private DataGridViewTextBoxColumn passangerLastName;
         private DataGridViewTextBoxColumn passangerPatronymicName;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn fullName;
     }
 }

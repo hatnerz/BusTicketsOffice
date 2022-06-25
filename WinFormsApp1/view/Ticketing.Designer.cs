@@ -132,6 +132,7 @@
             // 
             this.patronymicNameTextBox.Location = new System.Drawing.Point(566, 75);
             this.patronymicNameTextBox.Name = "patronymicNameTextBox";
+            this.patronymicNameTextBox.PlaceholderText = "По-батькові";
             this.patronymicNameTextBox.Size = new System.Drawing.Size(178, 24);
             this.patronymicNameTextBox.TabIndex = 8;
             // 
@@ -139,6 +140,7 @@
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(382, 75);
             this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.PlaceholderText = "Ім\'я";
             this.lastNameTextBox.Size = new System.Drawing.Size(178, 24);
             this.lastNameTextBox.TabIndex = 7;
             // 
@@ -146,6 +148,7 @@
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(198, 75);
             this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.PlaceholderText = "Прізвище";
             this.firstNameTextBox.Size = new System.Drawing.Size(178, 24);
             this.firstNameTextBox.TabIndex = 6;
             // 
