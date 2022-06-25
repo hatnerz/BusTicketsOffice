@@ -46,26 +46,26 @@ namespace WinFormsApp1
                 List<Ticket> exit;
                 Route selectedRoute = (Route)routeChose.SelectedItem;
                 landingListTextBox.Clear();
-                landingListTextBox.Text += selectedRoute.stringInfo;
+                landingListTextBox.Text += selectedRoute.StringInfo;
                 landingListTextBox.Text += Environment.NewLine;
-                for (int i = 0; i < selectedRoute.stops.Count; i++)
+                for (int i = 0; i < selectedRoute.Stops.Count; i++)
                 {
-                    enter = selectedRoute.GetEnterPassangers(selectedRoute.stops[i].stopName);
-                    exit = selectedRoute.GetExitPassangers(selectedRoute.stops[i].stopName);
+                    enter = selectedRoute.GetEnterPassangers(selectedRoute.Stops[i].StopName);
+                    exit = selectedRoute.GetExitPassangers(selectedRoute.Stops[i].StopName);
                     landingListTextBox.Text += Environment.NewLine;
-                    string tempStop = "◆ " + selectedRoute.stops[i].stopName + "  " +
-                        selectedRoute.stops[i].departure;
+                    string tempStop = "◆ " + selectedRoute.Stops[i].StopName + "  " +
+                        selectedRoute.Stops[i].Departure;
                     landingListTextBox.Text += tempStop;
                     landingListTextBox.Text += Environment.NewLine;
                     for (int j = 0; j < exit.Count; j++)
                     {
-                        string tempPassanger = "    -  Місце " + exit[j].seatNumber + "   " + exit[j].FullName;
+                        string tempPassanger = "    -  Місце " + exit[j].SeatNumber + "   " + exit[j].FullName;
                         landingListTextBox.Text += tempPassanger;
                         landingListTextBox.Text += Environment.NewLine;
                     }
                     for (int j = 0; j < enter.Count; j++)
                     {
-                        string tempPassanger = "    +  Місце " + enter[j].seatNumber + "   " + enter[j].FullName + " (до " + enter[j].destination + ")";
+                        string tempPassanger = "    +  Місце " + enter[j].SeatNumber + "   " + enter[j].FullName + " (до " + enter[j].Destination + ")";
                         landingListTextBox.Text += tempPassanger;
                         landingListTextBox.Text += Environment.NewLine;
                     }

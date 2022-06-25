@@ -39,7 +39,7 @@ namespace WinFormsApp1
                 MessageBoxButtons.YesNo);
             if(rez == DialogResult.Yes)
             {
-                AllRoutes.deleteTicket(passangerTickets[e.RowIndex]);
+                AllRoutes.DeleteTicket(passangerTickets[e.RowIndex]);
                 passangerTickets.RemoveAt(e.RowIndex);
                 passangerTicketsGrid.DataSource = passangerTickets.GetRange(0, passangerTickets.Count);
                 AllRoutes.Save(Constants.PathRoutes);

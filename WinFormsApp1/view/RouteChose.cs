@@ -11,7 +11,7 @@ namespace WinFormsApp1
             AllRoutes.Load(Constants.PathRoutes);
             ListOfCities.Load(Constants.PathCities);
             AllPassangers.Load(Constants.PathPassangers);
-            AllRoutes.deleteOutdatesRoutes();
+            AllRoutes.DeleteOutdatesRoutes();
             AllRoutes.Save(Constants.PathRoutes);
             AllPassangers.Save(Constants.PathPassangers);
             ListOfCities.Save(Constants.PathCities);
@@ -25,8 +25,8 @@ namespace WinFormsApp1
         {
             departureBox.Items.Clear();
             destinationBox.Items.Clear();
-            departureBox.Items.AddRange(ListOfCities.cities.ToArray());
-            destinationBox.Items.AddRange(ListOfCities.cities.ToArray());
+            departureBox.Items.AddRange(ListOfCities.Cities.ToArray());
+            destinationBox.Items.AddRange(ListOfCities.Cities.ToArray());
         }
 
         private void updateRoutes()
@@ -68,27 +68,27 @@ namespace WinFormsApp1
                         }
 
                         Label routeNumLabel = new Label();
-                        routeNumLabel.Text = "Рейс № " + correctRoutes[i].routeNumber;
+                        routeNumLabel.Text = "Рейс № " + correctRoutes[i].RouteNumber;
                         routeNumLabel.Location = new Point(27, 15);
                         routeNumLabel.AutoSize = true;
 
-                        Stop departureStop = correctRoutes[i].findStopByStopName(departureBox.Text);
-                        Stop destinationStop = correctRoutes[i].findStopByStopName(destinationBox.Text);
+                        Stop departureStop = correctRoutes[i].FindStopByStopName(departureBox.Text);
+                        Stop destinationStop = correctRoutes[i].FindStopByStopName(destinationBox.Text);
 
                         Label destinationLabel = new Label();
-                        destinationLabel.Text = "Прибуття:\n" + destinationStop.stopName + '\n' + destinationStop.departure;
+                        destinationLabel.Text = "Прибуття:\n" + destinationStop.StopName + '\n' + destinationStop.Departure;
                         destinationLabel.Location = new Point(545, 15);
                         destinationLabel.AutoSize = true;
 
                         Label departureLabel = new Label();
-                        departureLabel.Text = "Відправлення:\n" + departureStop.stopName + '\n' + departureStop.departure;
+                        departureLabel.Text = "Відправлення:\n" + departureStop.StopName + '\n' + departureStop.Departure;
                         departureLabel.Location = new Point(298, 15);
                         departureLabel.AutoSize = true;
 
                         Label emptySeatsLabel = new Label();
-                        int startIndex = correctRoutes[i].findStopIndexByName(departureBox.Text);
-                        int endIndex = correctRoutes[i].findStopIndexByName(destinationBox.Text);
-                        int freeSeats = correctRoutes[i].getFreeSeats(startIndex, endIndex).Count;
+                        int startIndex = correctRoutes[i].FindStopIndexByName(departureBox.Text);
+                        int endIndex = correctRoutes[i].FindStopIndexByName(destinationBox.Text);
+                        int freeSeats = correctRoutes[i].GetFreeSeats(startIndex, endIndex).Count;
                         emptySeatsLabel.Text = "Кількість вільних місць: " + Convert.ToString(freeSeats);
                         emptySeatsLabel.Location = new Point(27, 45);
                         emptySeatsLabel.AutoSize = true;

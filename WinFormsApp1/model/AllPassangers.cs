@@ -9,16 +9,16 @@ namespace WinFormsApp1
 {
     public static class AllPassangers
     {
-        public static List<Passanger> passangers = new List<Passanger>();
+        public static List<Passanger> Passangers = new List<Passanger>();
         public static void Load(string fileName)
         {
             StreamReader? sr;
             try
             {
                 sr = new StreamReader(fileName);
-                string? toLoad = sr.ReadLine();
+                string? toLoad = sr.ReadToEnd();
                 if (toLoad != null)
-                    AllPassangers.passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
+                    AllPassangers.Passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
                 else
                     MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
                 sr.Close();
@@ -32,30 +32,30 @@ namespace WinFormsApp1
         {
             if (!Directory.Exists(Constants.Directory))
                 Directory.CreateDirectory(Constants.Directory);
-            string toSave = JsonSerializer.Serialize(AllPassangers.passangers);
+            string toSave = JsonSerializer.Serialize(AllPassangers.Passangers);
             StreamWriter sw = new StreamWriter(fileName, false);
             sw.WriteLine(toSave);
             sw.Close();
         }
-        public static Passanger? getPassangerByPhoneNumber(string phoneNumber)
+        public static Passanger? GetPassangerByPhoneNumber(string phoneNumber)
         {
-            foreach (Passanger p in passangers)
+            foreach (Passanger p in Passangers)
             {
-                if (p.phoneNumber == phoneNumber)
+                if (p.PhoneNumber == phoneNumber)
                     return p; 
             }
             return null;
         }
-        public static void addTicketToPassangerByNumber(string number, Route route, string departure, string destination, 
+        public static void AddTicketToPassangerByNumber(string number, Route route, string departure, string destination, 
             int seatNumber, string firstName, string lastName, string patronymicName)
         {
-            Passanger? p = getPassangerByPhoneNumber(number);
+            Passanger? p = GetPassangerByPhoneNumber(number);
             if (p == null)
             {
-                passangers.Add(new Passanger(number));
-                p = passangers.Last();
+                Passangers.Add(new Passanger(number));
+                p = Passangers.Last();
             }
-            route.addTicket(departure, destination, number, seatNumber, firstName, lastName, patronymicName);
+            route.AddTicket(departure, destination, number, seatNumber, firstName, lastName, patronymicName);
         }
     }
 }

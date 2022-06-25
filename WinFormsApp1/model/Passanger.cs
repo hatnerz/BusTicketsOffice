@@ -8,10 +8,10 @@ namespace WinFormsApp1
 {
     public class Passanger
     {
-        public string phoneNumber { get; private set; }
+        public string PhoneNumber { get; private set; }
         public Passanger(string phoneNumber)
         {
-            this.phoneNumber = phoneNumber;
+            this.PhoneNumber = phoneNumber;
         }
     }
 }

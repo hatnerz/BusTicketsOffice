@@ -9,32 +9,32 @@ namespace WinFormsApp1
 {
     public class Ticket
     {
-        public string routeInfo { get; private set; }
-        public float price { get; private set; }
-        public int seatNumber { get; private set; }
-        public string passangerPhoneNumber { get; private set; }
-        public string departure { get; private set; }
-        public string destination { get; private set; }
-        public string firstName { get; private set; }
-        public string lastName { get; private set; }
-        public string patronymicName { get; private set; }
+        public string RouteInfo { get; private set; }
+        public float Price { get; private set; }
+        public int SeatNumber { get; private set; }
+        public string PassangerPhoneNumber { get; private set; }
+        public string Departure { get; private set; }
+        public string Destination { get; private set; }
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string PatronymicName { get; private set; }
         public string FullName
         {
-            get { return firstName + " " + lastName + " " + patronymicName; }
+            get { return FirstName + " " + LastName + " " + PatronymicName; }
         }
 
         public Ticket(string routeInfo, float price, int seatNumber, string passangerPhoneNumber, 
             string departure, string destination, string firstName, string lastName, string patronymicName)
         {
-            this.routeInfo = routeInfo;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.patronymicName = patronymicName;
-            this.price = price;
-            this.seatNumber = seatNumber;
-            this.passangerPhoneNumber = passangerPhoneNumber;
-            this.departure = departure;
-            this.destination = destination;
+            this.RouteInfo = routeInfo;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.PatronymicName = patronymicName;
+            this.Price = price;
+            this.SeatNumber = seatNumber;
+            this.PassangerPhoneNumber = passangerPhoneNumber;
+            this.Departure = departure;
+            this.Destination = destination;
         }
     }
 }

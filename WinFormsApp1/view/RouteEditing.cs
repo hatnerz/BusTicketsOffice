@@ -46,7 +46,7 @@ namespace WinFormsApp1
                 DialogResult rez = MessageBox.Show("Ви точно бажаєте видалити вибраний рейс?", Constants.ConfirmHead, MessageBoxButtons.YesNo);
                 if(rez == DialogResult.Yes)
                 {
-                    AllRoutes.routes.Remove((Route)routeChose.SelectedItem);
+                    AllRoutes.Routes.Remove((Route)routeChose.SelectedItem);
                     updateRouteChose();
                     AllRoutes.Save(Constants.PathRoutes);
                     MessageBox.Show("Операція успішна", Constants.SuccessHead, MessageBoxButtons.OK);
@@ -75,12 +75,14 @@ namespace WinFormsApp1
                     float price = float.Parse(stopInfo[3]);
                     temp.Add(new Stop(departure, stopName, price));
                 }
+                if (temp[0].Departure <= DateTime.Now)
+                    throw new Exception();
                 for (int i = 1; i < stopsInfo.Length; i++)
                 {
-                    if (temp[i].departure <= temp[i - 1].departure)
+                    if (temp[i].Departure <= temp[i - 1].Departure)
                         throw new Exception();
                 }
-                AllRoutes.routes.Add(new Route(temp, routeNumber, seatNumber));
+                AllRoutes.Routes.Add(new Route(temp, routeNumber, seatNumber));
                 updateRouteChose();
                 MessageBox.Show("Маршрут успішно додано", Constants.SuccessHead, MessageBoxButtons.OK);
                 AllRoutes.Save(Constants.PathRoutes);

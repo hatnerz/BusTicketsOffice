@@ -8,14 +8,14 @@ namespace WinFormsApp1
 {
     public class Stop
     {
-        public DateTime departure { get; private set; }
-        public string stopName { get; private set; }
-        public float price { get; private set; }
-        public Stop(DateTime departure, string stopName, float price)
+        public DateTime Departure { get; private set; }
+        public string StopName { get; private set; }
+        public float Price { get; private set; }
+        public Stop (DateTime departure, string stopName, float price)
         {
-            this.departure = departure;
-            this.stopName = stopName;
-            this.price = price;
+            this.Departure = departure;
+            this.StopName = stopName;
+            this.Price = price;
         }
     }
 }

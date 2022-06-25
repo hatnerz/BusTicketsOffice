@@ -21,14 +21,14 @@ namespace WinFormsApp1
             this.route = route;
             this.destination = destination;
             this.departure = departure;
-            routeNumberLabel.Text = "Рейс №" + route.routeNumber + " (" + route.stops[0].stopName + " - " + route.stops.Last().stopName + ")";
-            destinationLabel.Text = "Прибуття: " + destination.stopName + " " + destination.departure;
-            departureLabel.Text = "Відправлення: " + departure.stopName + " " + departure.departure;
-            int depIndex = route.stops.IndexOf(departure);
-            int destIndex = route.stops.IndexOf(destination);
-            float curcentPrice = route.getPrice(depIndex, destIndex);
+            routeNumberLabel.Text = "Рейс №" + route.RouteNumber + " (" + route.Stops[0].StopName + " - " + route.Stops.Last().StopName + ")";
+            destinationLabel.Text = "Прибуття: " + destination.StopName + " " + destination.Departure;
+            departureLabel.Text = "Відправлення: " + departure.StopName + " " + departure.Departure;
+            int depIndex = route.Stops.IndexOf(departure);
+            int destIndex = route.Stops.IndexOf(destination);
+            float curcentPrice = route.GetPrice(depIndex, destIndex);
             priceLabel.Text = "Вартість квитку: " + String.Format("{0:f2}", curcentPrice);
-            int[] temp = route.getFreeSeats(depIndex, destIndex).ToArray();
+            int[] temp = route.GetFreeSeats(depIndex, destIndex).ToArray();
             seatCombo.DataSource = temp;
         }
 
@@ -44,7 +44,7 @@ namespace WinFormsApp1
                 string lastName = lastNameTextBox.Text;
                 string patronymicName = patronymicNameTextBox.Text;
                 int seat = Convert.ToInt32(seatCombo.Text);
-                AllPassangers.addTicketToPassangerByNumber(phone, route, departure.stopName, destination.stopName, seat, firstName, lastName, patronymicName);
+                AllPassangers.AddTicketToPassangerByNumber(phone, route, departure.StopName, destination.StopName, seat, firstName, lastName, patronymicName);
                 MessageBox.Show("Квиток успішно придбано", Constants.SuccessHead, MessageBoxButtons.OK);
                 AllPassangers.Save(Constants.PathPassangers);
                 AllRoutes.Save(Constants.PathRoutes);
