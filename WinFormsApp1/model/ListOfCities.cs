@@ -12,20 +12,23 @@ namespace WinFormsApp1
         public static List<string> Cities { get; private set; } = new List<string>();
         public static void Load(string fileName)
         {
-            StreamReader? sr;
-            try
+            if (File.Exists(fileName))
             {
-                sr = new StreamReader(fileName);
-                string? toLoad = sr.ReadToEnd();
-                if (toLoad != null)
-                    ListOfCities.Cities = JsonSerializer.Deserialize<List<string>>(toLoad);
-                else
+                StreamReader? sr;
+                try
+                {
+                    sr = new StreamReader(fileName);
+                    string? toLoad = sr.ReadToEnd();
+                    if (toLoad != null)
+                        ListOfCities.Cities = JsonSerializer.Deserialize<List<string>>(toLoad);
+                    else
+                        MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
+                    sr.Close();
+                }
+                catch
+                {
                     MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
-                sr.Close();
-            }
-            catch
-            {
-                MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
+                }
             }
         }
         public static void Save(string fileName)

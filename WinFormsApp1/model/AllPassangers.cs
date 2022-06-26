@@ -12,20 +12,23 @@ namespace WinFormsApp1
         public static List<Passanger> Passangers = new List<Passanger>();
         public static void Load(string fileName)
         {
-            StreamReader? sr;
-            try
+            if (File.Exists(fileName))
             {
-                sr = new StreamReader(fileName);
-                string? toLoad = sr.ReadToEnd();
-                if (toLoad != null)
-                    AllPassangers.Passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
-                else
+                StreamReader? sr;
+                try
+                {
+                    sr = new StreamReader(fileName);
+                    string? toLoad = sr.ReadToEnd();
+                    if (toLoad != null)
+                        AllPassangers.Passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
+                    else
+                        MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
+                    sr.Close();
+                }
+                catch
+                {
                     MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
-                sr.Close();
-            }
-            catch
-            {
-                MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
+                }
             }
         }
         public static void Save(string fileName)

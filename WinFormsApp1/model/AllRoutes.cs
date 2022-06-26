@@ -12,20 +12,23 @@ namespace WinFormsApp1
         public static List<Route> Routes = new List<Route>();
         public static void Load(string fileName)
         {
-            StreamReader? sr;
-            try
+            if (File.Exists(fileName))
             {
-                sr = new StreamReader(fileName);
-                string? toLoad = sr.ReadToEnd();
-                if (toLoad != null)
-                    AllRoutes.Routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
-                else
+                StreamReader? sr;
+                try
+                {
+                    sr = new StreamReader(fileName);
+                    string? toLoad = sr.ReadToEnd();
+                    if (toLoad != null)
+                        AllRoutes.Routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
+                    else
+                        MessageBox.Show(Constants.ErrorRoutes, Constants.ErrorHead, MessageBoxButtons.OK);
+                    sr.Close();
+                }
+                catch
+                {
                     MessageBox.Show(Constants.ErrorRoutes, Constants.ErrorHead, MessageBoxButtons.OK);
-                sr.Close();
-            }
-            catch
-            {
-                MessageBox.Show(Constants.ErrorRoutes, Constants.ErrorHead, MessageBoxButtons.OK);
+                }
             }
         }
         public static void Save(string fileName)

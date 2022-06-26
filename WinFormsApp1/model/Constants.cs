@@ -12,9 +12,9 @@ namespace WinFormsApp1
         public static string ErrorHead = "Помилка";
         public static string SuccessHead = "Успіх";
         public static string ConfirmHead = "Підтвердження";
-        public static string ErrorPassangers = "Сталася помилка при завантаженні файлу (інформація про пасажирів). Файл не знайдено або некоректні дані";
-        public static string ErrorCities = "Сталася помилка при завантаженні файлу (назви зупинок). Файл не знайдено або некоректні дані";
-        public static string ErrorRoutes = "Сталася помилка при завантаженні файлу (інформація про рейси). Файл не знайдено або некоректні дані";
+        public static string ErrorPassangers = "Сталася помилка при завантаженні файлу (інформація про пасажирів).";
+        public static string ErrorCities = "Сталася помилка при завантаженні файлу (назви зупинок).";
+        public static string ErrorRoutes = "Сталася помилка при завантаженні файлу (інформація про рейси).";
         public static string PathCities = Directory + "\\cities.json";
         public static string PathRoutes = Directory + "\\routes.json";
         public static string PathPassangers = Directory + "\\passangers.json";
