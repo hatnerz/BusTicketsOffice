@@ -20,7 +20,11 @@ namespace WinFormsApp1
                     sr = new StreamReader(fileName);
                     string? toLoad = sr.ReadToEnd();
                     if (toLoad != null)
-                        AllPassangers.Passangers = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
+                    {
+                        List<Passanger>? temp = JsonSerializer.Deserialize<List<Passanger>>(toLoad);
+                        if (temp != null)
+                            AllPassangers.Passangers = temp;
+                    }
                     else
                         MessageBox.Show(Constants.ErrorPassangers, Constants.ErrorHead, MessageBoxButtons.OK);
                     sr.Close();

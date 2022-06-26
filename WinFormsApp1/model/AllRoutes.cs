@@ -20,7 +20,11 @@ namespace WinFormsApp1
                     sr = new StreamReader(fileName);
                     string? toLoad = sr.ReadToEnd();
                     if (toLoad != null)
-                        AllRoutes.Routes = JsonSerializer.Deserialize<List<Route>>(toLoad);
+                    {
+                        List<Route>? temp = JsonSerializer.Deserialize<List<Route>>(toLoad);
+                        if (temp != null)
+                            AllRoutes.Routes = temp;
+                    }
                     else
                         MessageBox.Show(Constants.ErrorRoutes, Constants.ErrorHead, MessageBoxButtons.OK);
                     sr.Close();

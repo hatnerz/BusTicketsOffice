@@ -20,7 +20,12 @@ namespace WinFormsApp1
                     sr = new StreamReader(fileName);
                     string? toLoad = sr.ReadToEnd();
                     if (toLoad != null)
-                        ListOfCities.Cities = JsonSerializer.Deserialize<List<string>>(toLoad);
+                    {
+                        List<string>? temp = JsonSerializer.Deserialize<List<string>>(toLoad);
+                        if (temp != null)
+                            ListOfCities.Cities = temp;
+
+                    }
                     else
                         MessageBox.Show(Constants.ErrorCities, Constants.ErrorHead, MessageBoxButtons.OK);
                     sr.Close();
