@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
     public partial class RouteEditing : Form
     {
@@ -44,7 +34,7 @@ namespace WinFormsApp1
             else
             {
                 DialogResult rez = MessageBox.Show("Ви точно бажаєте видалити вибраний рейс?", Constants.ConfirmHead, MessageBoxButtons.YesNo);
-                if(rez == DialogResult.Yes)
+                if (rez == DialogResult.Yes)
                 {
                     AllRoutes.Routes.Remove((Route)routeChose.SelectedItem);
                     updateRouteChose();
@@ -92,7 +82,7 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("Перевірте правильність введення даних", Constants.ErrorHead, MessageBoxButtons.OK);
             }
-            
+
         }
 
         private void deleteUnused_Click(object sender, EventArgs e)
@@ -118,7 +108,7 @@ namespace WinFormsApp1
 
         private void RouteEditing_FormClosed(object sender, FormClosedEventArgs e)
         {
-            senderForm.updateCitiesChose();
+            senderForm.UpdateCitiesChose();
         }
     }
 }

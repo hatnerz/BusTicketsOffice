@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace WinFormsApp1
 {
@@ -49,11 +44,11 @@ namespace WinFormsApp1
             foreach (Passanger p in Passangers)
             {
                 if (p.PhoneNumber == phoneNumber)
-                    return p; 
+                    return p;
             }
             return null;
         }
-        public static void AddTicketToPassangerByNumber(string number, Route route, string departure, string destination, 
+        public static void AddTicketToPassangerByNumber(string number, Route route, string departure, string destination,
             int seatNumber, string firstName, string lastName, string patronymicName)
         {
             Passanger? p = GetPassangerByPhoneNumber(number);

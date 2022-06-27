@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
     public partial class Ticketing : Form
     {
@@ -34,7 +24,7 @@ namespace WinFormsApp1
 
         private void addTicketButton_Click(object sender, EventArgs e)
         {
-            if (phoneMaskTextBox.Text.Length!=17 || firstNameTextBox.Text == "" ||
+            if (phoneMaskTextBox.Text.Length != 17 || firstNameTextBox.Text == "" ||
                 lastNameTextBox.Text == "" || patronymicNameTextBox.Text == "" || seatCombo.Text == "")
                 MessageBox.Show("Введіть усі необхідні дані", Constants.ErrorHead, MessageBoxButtons.OK);
             else

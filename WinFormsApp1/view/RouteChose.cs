@@ -1,5 +1,3 @@
-using System.Text.Json;
-
 namespace WinFormsApp1
 {
     public partial class RouteChose : Form
@@ -15,13 +13,13 @@ namespace WinFormsApp1
             AllRoutes.Save(Constants.PathRoutes);
             AllPassangers.Save(Constants.PathPassangers);
             ListOfCities.Save(Constants.PathCities);
-            updateCitiesChose();
+            UpdateCitiesChose();
             dateDepartureBox.MinDate = DateTime.Now;
             DateTime Max = DateTime.Now;
             dateDepartureBox.MaxDate = Max.AddMonths(1);
         }
 
-        public void updateCitiesChose()
+        public void UpdateCitiesChose()
         {
             departureBox.Items.Clear();
             destinationBox.Items.Clear();
@@ -136,7 +134,7 @@ namespace WinFormsApp1
         }
         private void findRoutesButton_Click(object sender, EventArgs e)
         {
-            updateRoutes();   
+            updateRoutes();
         }
 
         private void startTicketing(Route route, Stop departure, Stop destination)
@@ -159,7 +157,7 @@ namespace WinFormsApp1
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult exit = MessageBox.Show("Ви точно бажаєте вийти з програми?", Constants.ConfirmHead, MessageBoxButtons.YesNo);
-            if(exit == DialogResult.Yes)
+            if (exit == DialogResult.Yes)
                 this.Close();
         }
 

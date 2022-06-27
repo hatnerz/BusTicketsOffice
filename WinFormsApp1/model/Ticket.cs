@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
     public class Ticket
     {
@@ -23,7 +16,7 @@ namespace WinFormsApp1
             get { return FirstName + " " + LastName + " " + PatronymicName; }
         }
 
-        public Ticket(string routeInfo, float price, int seatNumber, string passangerPhoneNumber, 
+        public Ticket(string routeInfo, float price, int seatNumber, string passangerPhoneNumber,
             string departure, string destination, string firstName, string lastName, string patronymicName)
         {
             this.RouteInfo = routeInfo;

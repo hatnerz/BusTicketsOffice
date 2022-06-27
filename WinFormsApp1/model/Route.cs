@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
     public class Route
     {
@@ -16,7 +9,8 @@ namespace WinFormsApp1
         private bool[,] occupiedSeats { get; set; }
         public string StringInfo
         {
-            get {
+            get
+            {
                 string rez = Convert.ToString(RouteNumber);
                 rez += " ";
                 rez += Stops[0].StopName;
@@ -31,9 +25,9 @@ namespace WinFormsApp1
             {
                 bool[] temp = new bool[occupiedSeats.Length];
                 int index = 0;
-                for(int i = 0; i<NumberOfSeats; i++)
+                for (int i = 0; i < NumberOfSeats; i++)
                 {
-                    for(int j = 0; j<Stops.Count; j++)
+                    for (int j = 0; j < Stops.Count; j++)
                     {
                         temp[index++] = occupiedSeats[i, j];
                     }
@@ -52,27 +46,27 @@ namespace WinFormsApp1
                 }
             }
         }
-        public Route (List<Stop> stops, int routeNumber, int numberOfSeats)
+        public Route(List<Stop> stops, int routeNumber, int numberOfSeats)
         {
             this.Stops = stops;
             this.RouteNumber = routeNumber;
             this.NumberOfSeats = numberOfSeats;
             Tickets = new List<Ticket>();
-            occupiedSeats = new bool[numberOfSeats,stops.Count];
+            occupiedSeats = new bool[numberOfSeats, stops.Count];
         }
         public Stop FindStopByStopName(string stopName)
         {
             foreach (Stop stop in Stops)
             {
-                if(stop.StopName == stopName)
+                if (stop.StopName == stopName)
                     return stop;
             }
-            return Stops[Stops.Count-1];
+            return Stops[Stops.Count - 1];
         }
-        
+
         public int FindStopIndexByName(string stopName)
         {
-            for(int i = 0; i< Stops.Count; i++)
+            for (int i = 0; i < Stops.Count; i++)
             {
                 if (Stops[i].StopName == stopName)
                     return i;
@@ -85,7 +79,7 @@ namespace WinFormsApp1
             int startIndex = FindStopIndexByName(departure);
             int endIndex = FindStopIndexByName(destination);
             float price = 0;
-            for(int i = startIndex+1; i <= endIndex; i++)
+            for (int i = startIndex + 1; i <= endIndex; i++)
             {
                 price += Stops[i].Price;
             }
@@ -94,7 +88,7 @@ namespace WinFormsApp1
             Tickets.Add(temp);
             for (int i = startIndex; i < endIndex; i++)
             {
-                occupiedSeats[seatNumber-1, i] = true;
+                occupiedSeats[seatNumber - 1, i] = true;
             }
         }
         public void DeleteTicket(Ticket t)
@@ -102,7 +96,7 @@ namespace WinFormsApp1
             int departureIndex = FindStopIndexByName(t.Departure);
             int destinationIndex = FindStopIndexByName(t.Destination);
             for (int i = departureIndex; i < destinationIndex; i++)
-                occupiedSeats[t.SeatNumber-1, i] = false;
+                occupiedSeats[t.SeatNumber - 1, i] = false;
             Tickets.Remove(t);
         }
 
@@ -110,10 +104,10 @@ namespace WinFormsApp1
         {
             List<int> freeSeats = new List<int>();
             bool correct = true;
-            for(int i = 0; i < NumberOfSeats; i++)
+            for (int i = 0; i < NumberOfSeats; i++)
             {
                 correct = true;
-                for(int j = startIndex; j < endIndex; j++)
+                for (int j = startIndex; j < endIndex; j++)
                 {
                     if (occupiedSeats[i, j] == true)
                     {
@@ -121,9 +115,9 @@ namespace WinFormsApp1
                         break;
                     }
                 }
-                if(correct)
+                if (correct)
                 {
-                    freeSeats.Add(i+1);
+                    freeSeats.Add(i + 1);
                 }
             }
             return freeSeats;
@@ -146,9 +140,9 @@ namespace WinFormsApp1
         public List<Ticket> GetEnterPassangers(string stopName)
         {
             List<Ticket> temp = new List<Ticket>();
-            for(int i = 0; i<Tickets.Count; i++)
+            for (int i = 0; i < Tickets.Count; i++)
             {
-                if(Tickets[i].Departure == stopName)
+                if (Tickets[i].Departure == stopName)
                     temp.Add(Tickets[i]);
             }
             return temp;

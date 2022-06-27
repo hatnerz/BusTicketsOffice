@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace WinFormsApp1
 {
@@ -49,11 +44,11 @@ namespace WinFormsApp1
             List<Route> foundRoutes = new List<Route>();
             foreach (Route route in Routes)
             {
-                for (int i = 0; i<route.Stops.Count; i++)
+                for (int i = 0; i < route.Stops.Count; i++)
                 {
-                    if(route.Stops[i].StopName == departure && route.Stops[i].Departure.ToShortDateString() == date.ToShortDateString())
+                    if (route.Stops[i].StopName == departure && route.Stops[i].Departure.ToShortDateString() == date.ToShortDateString())
                     {
-                        for(int j = i+1; j<route.Stops.Count; j++)
+                        for (int j = i + 1; j < route.Stops.Count; j++)
                         {
                             if (route.Stops[j].StopName == destination)
                             {
@@ -61,7 +56,7 @@ namespace WinFormsApp1
                                 break;
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -80,11 +75,11 @@ namespace WinFormsApp1
         public static List<Ticket> FindPassangerTicketsByNumber(string phoneNumber)
         {
             List<Ticket> correctTickets = new List<Ticket>();
-            foreach(Route route in Routes)
+            foreach (Route route in Routes)
             {
-                foreach(Ticket ticket in route.Tickets)
+                foreach (Ticket ticket in route.Tickets)
                 {
-                    if(ticket.PassangerPhoneNumber == phoneNumber)
+                    if (ticket.PassangerPhoneNumber == phoneNumber)
                     {
                         correctTickets.Add(ticket);
                     }
@@ -94,16 +89,16 @@ namespace WinFormsApp1
         }
         public static bool DeleteTicket(Ticket t)
         {
-            foreach(Route route in Routes)
+            foreach (Route route in Routes)
             {
-                foreach(Ticket ticket in route.Tickets)
+                foreach (Ticket ticket in route.Tickets)
                 {
-                    if(ticket == t)
+                    if (ticket == t)
                     {
                         route.DeleteTicket(t);
                         return true;
                     }
-                        
+
                 }
             }
             return false;
@@ -120,19 +115,19 @@ namespace WinFormsApp1
                 }
             }
         }
-        
+
         public static List<Route> SortByDepartureDate(List<Route> routes)
         {
             Route temp;
-            for(int i = 0; i < routes.Count; i++)
+            for (int i = 0; i < routes.Count; i++)
             {
-                for(int j = 0; j < routes.Count-1-i; j++)
+                for (int j = 0; j < routes.Count - 1 - i; j++)
                 {
-                    if(routes[j].Stops[0].Departure > routes[j+1].Stops[0].Departure)
+                    if (routes[j].Stops[0].Departure > routes[j + 1].Stops[0].Departure)
                     {
                         temp = routes[j];
-                        routes[j] = routes[j+1];
-                        routes[j+1] = temp;
+                        routes[j] = routes[j + 1];
+                        routes[j + 1] = temp;
                     }
                 }
             }

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
     public partial class TicketsReturn : Form
     {
@@ -25,7 +15,7 @@ namespace WinFormsApp1
             else
             {
                 passangerTickets = AllRoutes.FindPassangerTicketsByNumber(phoneMaskTextBox.Text);
-                if(passangerTickets.Count == 0)
+                if (passangerTickets.Count == 0)
                 {
                     MessageBox.Show("Не знайдено жодного квитку за вказаним номером телефону", Constants.ErrorHead, MessageBoxButtons.OK);
                 }
@@ -37,7 +27,7 @@ namespace WinFormsApp1
         {
             DialogResult rez = MessageBox.Show("Ви впевнені, що хочете повернути вибраний квиток?", Constants.ConfirmHead,
                 MessageBoxButtons.YesNo);
-            if(rez == DialogResult.Yes)
+            if (rez == DialogResult.Yes)
             {
                 AllRoutes.DeleteTicket(passangerTickets[e.RowIndex]);
                 passangerTickets.RemoveAt(e.RowIndex);

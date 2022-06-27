@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace WinFormsApp1
 {
@@ -57,7 +52,7 @@ namespace WinFormsApp1
                 }
             }
 
-            if(flag == true)
+            if (flag == true)
                 Cities.Add(city);
             return flag;
         }
@@ -69,9 +64,9 @@ namespace WinFormsApp1
                 flag = true;
                 foreach (Route route in AllRoutes.Routes)
                 {
-                    foreach(Stop stop in route.Stops)
+                    foreach (Stop stop in route.Stops)
                     {
-                        if(Cities[i]==stop.StopName)
+                        if (Cities[i] == stop.StopName)
                         {
                             flag = false;
                             break;

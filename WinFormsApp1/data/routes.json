@@ -1,0 +1,597 @@
+[
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-28T05:00:00",
+        "StopName": "Kharkiv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-28T12:00:00",
+        "StopName": "Kyiv",
+        "Price": 262.2
+      },
+      {
+        "Departure": "2022-06-28T23:00:00",
+        "StopName": "Lviv",
+        "Price": 220
+      }
+    ],
+    "RouteNumber": 112,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "112 Kharkiv - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-29T05:00:00",
+        "StopName": "Kharkiv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-29T12:00:00",
+        "StopName": "Kyiv",
+        "Price": 262.2
+      },
+      {
+        "Departure": "2022-06-29T23:00:00",
+        "StopName": "Lviv",
+        "Price": 220
+      }
+    ],
+    "RouteNumber": 112,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "112 Kharkiv - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-30T05:00:00",
+        "StopName": "Kharkiv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-30T12:00:00",
+        "StopName": "Kyiv",
+        "Price": 262.2
+      },
+      {
+        "Departure": "2022-06-30T23:00:00",
+        "StopName": "Lviv",
+        "Price": 220
+      }
+    ],
+    "RouteNumber": 112,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "112 Kharkiv - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-29T12:00:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-29T22:00:00",
+        "StopName": "Kyiv",
+        "Price": 102.55
+      },
+      {
+        "Departure": "2022-06-30T06:00:00",
+        "StopName": "Dnipro",
+        "Price": 142.3
+      }
+    ],
+    "RouteNumber": 610,
+    "Tickets": [],
+    "NumberOfSeats": 5,
+    "StringInfo": "610 Lviv - Dnipro",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-01T03:00:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-01T15:00:00",
+        "StopName": "Kyiv",
+        "Price": 206.2
+      },
+      {
+        "Departure": "2022-07-01T18:00:00",
+        "StopName": "Poltava",
+        "Price": 106.2
+      },
+      {
+        "Departure": "2022-07-01T23:30:00",
+        "StopName": "Kharkiv",
+        "Price": 167.2
+      }
+    ],
+    "RouteNumber": 581,
+    "Tickets": [],
+    "NumberOfSeats": 15,
+    "StringInfo": "581 Lviv - Kharkiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T03:00:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T15:00:00",
+        "StopName": "Kyiv",
+        "Price": 206.2
+      },
+      {
+        "Departure": "2022-07-02T18:00:00",
+        "StopName": "Poltava",
+        "Price": 106.2
+      },
+      {
+        "Departure": "2022-07-02T23:30:00",
+        "StopName": "Kharkiv",
+        "Price": 167.2
+      }
+    ],
+    "RouteNumber": 581,
+    "Tickets": [],
+    "NumberOfSeats": 15,
+    "StringInfo": "581 Lviv - Kharkiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T17:00:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T23:00:00",
+        "StopName": "Lviv",
+        "Price": 256
+      }
+    ],
+    "RouteNumber": 1,
+    "Tickets": [],
+    "NumberOfSeats": 5,
+    "StringInfo": "1 Dnipro - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T05:00:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T15:00:00",
+        "StopName": "Kyiv",
+        "Price": 105.2
+      },
+      {
+        "Departure": "2022-07-02T20:00:00",
+        "StopName": "Lviv",
+        "Price": 150.2
+      }
+    ],
+    "RouteNumber": 2,
+    "Tickets": [],
+    "NumberOfSeats": 7,
+    "StringInfo": "2 Dnipro - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T08:00:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T10:00:00",
+        "StopName": "Poltava",
+        "Price": 30.2
+      },
+      {
+        "Departure": "2022-07-02T19:00:00",
+        "StopName": "Lviv",
+        "Price": 250.3
+      }
+    ],
+    "RouteNumber": 3,
+    "Tickets": [
+      {
+        "RouteInfo": "3 Dnipro - Lviv",
+        "Price": 250.3,
+        "SeatNumber": 2,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Poltava",
+        "Destination": "Lviv",
+        "FirstName": "\u041A\u0430\u0440\u043F\u0435\u043D\u043A\u043E",
+        "LastName": "\u041A\u0430\u0440\u0438\u043D\u0430",
+        "PatronymicName": "\u0420\u0443\u0441\u043B\u0430\u043D\u0456\u0432\u043D\u0430",
+        "FullName": "\u041A\u0430\u0440\u043F\u0435\u043D\u043A\u043E \u041A\u0430\u0440\u0438\u043D\u0430 \u0420\u0443\u0441\u043B\u0430\u043D\u0456\u0432\u043D\u0430"
+      }
+    ],
+    "NumberOfSeats": 25,
+    "StringInfo": "3 Dnipro - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T01:00:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T03:00:00",
+        "StopName": "Poltava",
+        "Price": 50.2
+      },
+      {
+        "Departure": "2022-07-02T10:00:00",
+        "StopName": "Kyiv",
+        "Price": 102.6
+      },
+      {
+        "Departure": "2022-07-02T18:30:00",
+        "StopName": "Lviv",
+        "Price": 180.3
+      }
+    ],
+    "RouteNumber": 4,
+    "Tickets": [
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 50.2,
+        "SeatNumber": 24,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Dnipro",
+        "Destination": "Poltava",
+        "FirstName": "\u0406\u0432\u0430\u043D\u043E\u0432",
+        "LastName": "\u0406\u0432\u0430\u043D",
+        "PatronymicName": "\u0406\u0432\u0430\u043D\u043E\u0432\u0438\u0447",
+        "FullName": "\u0406\u0432\u0430\u043D\u043E\u0432 \u0406\u0432\u0430\u043D \u0406\u0432\u0430\u043D\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 333.1,
+        "SeatNumber": 9,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Dnipro",
+        "Destination": "Lviv",
+        "FirstName": "\u041F\u0435\u0442\u0440\u0435\u043D\u043A\u043E",
+        "LastName": "\u041F\u0435\u0442\u0440\u043E",
+        "PatronymicName": "\u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447",
+        "FullName": "\u041F\u0435\u0442\u0440\u0435\u043D\u043A\u043E \u041F\u0435\u0442\u0440\u043E \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 333.1,
+        "SeatNumber": 2,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Dnipro",
+        "Destination": "Lviv",
+        "FirstName": "\u041A\u0443\u0440\u0438\u043B\u043E",
+        "LastName": "\u0406\u043B\u043B\u044F",
+        "PatronymicName": "\u0412\u0430\u0434\u0438\u043C\u043E\u0432\u0438\u0447",
+        "FullName": "\u041A\u0443\u0440\u0438\u043B\u043E \u0406\u043B\u043B\u044F \u0412\u0430\u0434\u0438\u043C\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 180.3,
+        "SeatNumber": 27,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Kyiv",
+        "Destination": "Lviv",
+        "FirstName": "\u0410\u043D\u0456\u043A\u0435\u0454\u0432",
+        "LastName": "\u0406\u043B\u043B\u044F",
+        "PatronymicName": "\u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447",
+        "FullName": "\u0410\u043D\u0456\u043A\u0435\u0454\u0432 \u0406\u043B\u043B\u044F \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 333.1,
+        "SeatNumber": 6,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Dnipro",
+        "Destination": "Lviv",
+        "FirstName": "\u0420\u043E\u043C\u0430\u043D\u0435\u043D\u043A\u043E",
+        "LastName": "\u041C\u0430\u043A\u0441\u0438\u043C",
+        "PatronymicName": "\u041C\u0430\u043A\u0441\u0438\u043C\u043E\u0432\u0438\u0447",
+        "FullName": "\u0420\u043E\u043C\u0430\u043D\u0435\u043D\u043A\u043E \u041C\u0430\u043A\u0441\u0438\u043C \u041C\u0430\u043A\u0441\u0438\u043C\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 333.1,
+        "SeatNumber": 3,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Dnipro",
+        "Destination": "Lviv",
+        "FirstName": "\u0406\u0449\u0435\u043D\u043A\u043E",
+        "LastName": "\u041A\u0438\u0440\u0438\u043B\u043E",
+        "PatronymicName": "\u0420\u043E\u043C\u0430\u043D\u043E\u0432\u0438\u0447",
+        "FullName": "\u0406\u0449\u0435\u043D\u043A\u043E \u041A\u0438\u0440\u0438\u043B\u043E \u0420\u043E\u043C\u0430\u043D\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 102.6,
+        "SeatNumber": 20,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Poltava",
+        "Destination": "Kyiv",
+        "FirstName": "\u0427\u0435\u0440\u0432\u043E\u043D\u0438\u0439",
+        "LastName": "\u0414\u0430\u043D\u0438\u043B\u043E",
+        "PatronymicName": "\u041C\u0430\u043A\u0441\u0438\u043C\u043E\u0432\u0438\u0447",
+        "FullName": "\u0427\u0435\u0440\u0432\u043E\u043D\u0438\u0439 \u0414\u0430\u043D\u0438\u043B\u043E \u041C\u0430\u043A\u0441\u0438\u043C\u043E\u0432\u0438\u0447"
+      },
+      {
+        "RouteInfo": "4 Dnipro - Lviv",
+        "Price": 282.9,
+        "SeatNumber": 11,
+        "PassangerPhoneNumber": "(380)77-777-77-77",
+        "Departure": "Poltava",
+        "Destination": "Lviv",
+        "FirstName": "\u0406\u0432\u0430\u043D\u0435\u043D\u043A\u043E",
+        "LastName": "\u041A\u0430\u0442\u0435\u0440\u0438\u043D\u0430",
+        "PatronymicName": "\u0421\u0442\u0430\u043D\u0456\u0441\u043B\u0430\u0432\u0456\u0432\u043D\u0430",
+        "FullName": "\u0406\u0432\u0430\u043D\u0435\u043D\u043A\u043E \u041A\u0430\u0442\u0435\u0440\u0438\u043D\u0430 \u0421\u0442\u0430\u043D\u0456\u0441\u043B\u0430\u0432\u0456\u0432\u043D\u0430"
+      }
+    ],
+    "NumberOfSeats": 30,
+    "StringInfo": "4 Dnipro - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, true, true, true, false, true, true, true, false, false, false, false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T20:00:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-03T13:00:00",
+        "StopName": "Lviv",
+        "Price": 270.2
+      }
+    ],
+    "RouteNumber": 5,
+    "Tickets": [],
+    "NumberOfSeats": 12,
+    "StringInfo": "5 Dnipro - Lviv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-28T15:30:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-28T18:00:00",
+        "StopName": "Kharkiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-06-28T23:10:00",
+        "StopName": "Kyiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 929,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "929 Dnipro - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-29T15:30:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-29T18:00:00",
+        "StopName": "Kharkiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-06-29T23:10:00",
+        "StopName": "Kyiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 929,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "929 Dnipro - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-06-30T15:30:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-06-30T18:00:00",
+        "StopName": "Kharkiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-06-30T23:10:00",
+        "StopName": "Kyiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 929,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "929 Dnipro - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-01T15:30:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-01T18:00:00",
+        "StopName": "Kharkiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-07-01T23:10:00",
+        "StopName": "Kyiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 929,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "929 Dnipro - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-02T15:30:00",
+        "StopName": "Dnipro",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-02T18:00:00",
+        "StopName": "Kharkiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-07-02T23:10:00",
+        "StopName": "Kyiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 929,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "929 Dnipro - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-26T15:30:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-26T18:00:00",
+        "StopName": "Kyiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-07-26T23:10:00",
+        "StopName": "Kharkiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 679,
+    "Tickets": [],
+    "NumberOfSeats": 25,
+    "StringInfo": "679 Lviv - Kharkiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-27T15:30:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-27T18:00:00",
+        "StopName": "Kyiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-07-27T23:10:00",
+        "StopName": "Kharkiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 679,
+    "Tickets": [],
+    "NumberOfSeats": 25,
+    "StringInfo": "679 Lviv - Kharkiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-28T15:30:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-28T18:00:00",
+        "StopName": "Kyiv",
+        "Price": 150.2
+      },
+      {
+        "Departure": "2022-07-28T23:10:00",
+        "StopName": "Kharkiv",
+        "Price": 140.2
+      }
+    ],
+    "RouteNumber": 679,
+    "Tickets": [],
+    "NumberOfSeats": 25,
+    "StringInfo": "679 Lviv - Kharkiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  },
+  {
+    "Stops": [
+      {
+        "Departure": "2022-07-27T15:00:00",
+        "StopName": "Lviv",
+        "Price": 0
+      },
+      {
+        "Departure": "2022-07-27T20:00:00",
+        "StopName": "Kharkiv",
+        "Price": 51.2
+      },
+      {
+        "Departure": "2022-07-28T03:00:00",
+        "StopName": "Kyiv",
+        "Price": 102.2
+      }
+    ],
+    "RouteNumber": 678,
+    "Tickets": [],
+    "NumberOfSeats": 10,
+    "StringInfo": "678 Lviv - Kyiv",
+    "OccupiedSeatsSerialize": [ false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false ]
+  }
+]
